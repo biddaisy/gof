@@ -16,6 +16,8 @@ public class NodeTree {
     }
 
     public void traverse (Visitor visitor ){
-        rootNode.accept( visitor );
+        if ( rootNode instanceof Acceptor ) {
+            ((Acceptor)rootNode).accept(visitor);
+        }
     }
 }

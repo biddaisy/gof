@@ -3,10 +3,19 @@ package com.mr.gof.visitor;
 /**
  * Created by Ramanovich on 12/30/2016.
  */
-public class Employee extends Node {
+public class Employee implements Node, Acceptor {
 
+    private String name;
     private int salary;
     private int incentiveBonus;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public int getSalary() {
         return salary;
@@ -24,6 +33,7 @@ public class Employee extends Node {
         this.incentiveBonus = incentiveBonus;
     }
 
+    @Override
     public void accept (Visitor visitor){
         visitor.visit(this);
     }

@@ -5,8 +5,6 @@ package com.mr.gof.visitor;
  */
 public interface Visitor {
 
-    void visit(Node node);
-
     void visit(Employee employee);
 
     void visit(Boss boss);

@@ -17,12 +17,9 @@ public class SuperBoss extends Boss {
         this.optionBonus = optionBonus;
     }
 
+    @Override
     public void accept (Visitor visitor){
         visitor.visit(this);
-        /*List<Node> children = getChildren();
-        for (Node child : children){
-            child.accept(visitor);
-        }*/
-        super.accept(visitor);
+        acceptChildren(visitor);
     }
 }
