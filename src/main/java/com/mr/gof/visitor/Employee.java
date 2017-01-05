@@ -3,7 +3,7 @@ package com.mr.gof.visitor;
 /**
  * Created by Ramanovich on 12/30/2016.
  */
-public class Employee implements Node, Acceptor {
+public class Employee  {
 
     private String name;
     private int salary;
@@ -33,7 +33,6 @@ public class Employee implements Node, Acceptor {
         this.incentiveBonus = incentiveBonus;
     }
 
-    @Override
     public void accept (Visitor visitor){
         visitor.visit(this);
     }

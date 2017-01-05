@@ -3,23 +3,24 @@ package com.mr.gof.visitor;
 /**
  * Created by Ramanovich on 12/30/2016.
  */
-public class Company extends NodeTree{
+public class Company {
+
+    private SuperBoss superBoss;
 
     public void initialize(){
-        SuperBoss superBoss = createSuperBoss();
+        superBoss = createSuperBoss();
         Boss boss1 = createBoss("Boss1", 700, 1400);
         Boss boss2 = createBoss("Boss2", 500, 1000);
         Employee employee1 = createEmployee("Employee1", 300, 100);
         Employee employee2 = createEmployee("Employee2", 200, 50);
         Employee employee3 = createEmployee("Employee3", 100, 25);
         Employee employee4 = createEmployee("Employee4", 50, 10);
-        setRootNode(superBoss);
-        superBoss.addChild(boss1);
-        superBoss.addChild(boss2);
-        boss1.addChild(employee1);
-        boss1.addChild(employee2);
-        boss2.addChild(employee3);
-        boss2.addChild(employee4);
+        superBoss.addEmployee(boss1);
+        superBoss.addEmployee(boss2);
+        boss1.addEmployee(employee1);
+        boss1.addEmployee(employee2);
+        boss2.addEmployee(employee3);
+        boss2.addEmployee(employee4);
     }
 
     private SuperBoss createSuperBoss() {
@@ -51,7 +52,7 @@ public class Company extends NodeTree{
         Company company = new Company();
         IncomeVisitor incomeVisitor = new IncomeVisitor();
         company.initialize();
-        company.traverse(incomeVisitor);
+        company.superBoss.accept(incomeVisitor);
         System.out.println("super boss income = " + incomeVisitor.getSuperBossIncome());
         System.out.println("bosses income = " + incomeVisitor.getBossIncome());
         System.out.println("employees income = " + incomeVisitor.getEmployeeIncome());
