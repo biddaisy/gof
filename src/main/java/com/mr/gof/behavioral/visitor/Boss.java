@@ -1,4 +1,4 @@
-package com.mr.gof.visitor;
+package com.mr.gof.behavioral.visitor;
 
 import java.util.ArrayList;
 import java.util.List;

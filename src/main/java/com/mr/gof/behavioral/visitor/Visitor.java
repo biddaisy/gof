@@ -1,4 +1,4 @@
-package com.mr.gof.visitor;
+package com.mr.gof.behavioral.visitor;
 
 /**
  * Created by Ramanovich on 12/30/2016.
