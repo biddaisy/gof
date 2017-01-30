@@ -7,8 +7,6 @@ public class User {
 
     private String userId;
     private String loginName;
-    private String passwordDigest;
-    private int salt;
 
     public User(String userId) {
         this.userId = userId;
@@ -26,19 +24,4 @@ public class User {
         this.loginName = loginName;
     }
 
-    public String getPasswordDigest() {
-        return passwordDigest;
-    }
-
-    public void setPasswordDigest(String passwordDigest) {
-        this.passwordDigest = passwordDigest;
-    }
-
-    public int getSalt() {
-        return salt;
-    }
-
-    public void setSalt(int salt) {
-        this.salt = salt;
-    }
 }

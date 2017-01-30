@@ -22,13 +22,13 @@ public class PasswordLogin extends Login {
 
     @Override
     public void postAuthentication(LoginResult loginResult) {
-
+        System.out.println ("PasswordLogin.postAuthentication");
     }
 
     @Override
     public LoginResult authenticate(Credential credential) throws LoginException {
         PasswordCredential passwordCredentials = (PasswordCredential) credential;
-        User user = UserStorage.getInstance().findUserByLoginName(passwordCredentials.getLoginName());
+        PasswordUser user = (PasswordUser) UserStorage.getInstance().findUserByLoginName(passwordCredentials.getLoginName());
         if (user == null){
             return WRONG_LOGIN_NAME;
         }

@@ -22,11 +22,11 @@ public class UserStorage {
     private List<User> users = new ArrayList<User>();
 
     public void initialize() throws UserStorageException {
-        users.add(createUser("user1", "login1", "password1"));
-        users.add(createUser("user2", "login2", "password2"));
-        users.add(createUser("user3", "login3", "password3"));
-        users.add(createUser("user4", "login4", "password4"));
-        users.add(createUser("user5", "login5", "password5"));
+        users.add(createPasswordUser ("user1", "login1", "password1"));
+        users.add(createPasswordUser ("user2", "login2", "password2"));
+        users.add(createPasswordUser ("user3", "login3", "password3"));
+        users.add(createPasswordUser ("user4", "login4", "password4"));
+        users.add(createPasswordUser ("user5", "login5", "password5"));
     }
 
     public User findUserByLoginName(String loginName){
@@ -38,8 +38,8 @@ public class UserStorage {
         return null;
     }
 
-    private static User createUser(String userId, String loginName, String password) throws UserStorageException {
-        User user = new User(userId);
+    private static PasswordUser createPasswordUser(String userId, String loginName, String password) throws UserStorageException {
+        PasswordUser user = new PasswordUser(userId);
         Digest digest = createDigest(password);
         user.setLoginName(loginName);
         user.setPasswordDigest(digest.getDigest());

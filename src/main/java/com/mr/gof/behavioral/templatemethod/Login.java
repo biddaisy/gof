@@ -7,7 +7,7 @@ public abstract class Login {
 
     public final LoginResult login() throws LoginException {
         Credential credential = fetchCredentials();
-        logCredentials();
+        logCredential (credential);
         LoginResult loginResult = authenticate(credential);
         logAuthentication(loginResult);
         postAuthentication(loginResult);
@@ -15,15 +15,16 @@ public abstract class Login {
     }
 
     private void logAuthentication(LoginResult loginResult) {
-
+        System.out.println ("login result : " + loginResult);
     }
 
-    private void logCredentials() {
+    private void logCredential(Credential credential) {
+        System.out.println ("login : " + credential.getLoginName ());
     }
 
-    public abstract void postAuthentication(LoginResult loginResult);
+    protected abstract void postAuthentication(LoginResult loginResult);
 
-    public abstract LoginResult authenticate(Credential credential) throws LoginException;
+    protected abstract LoginResult authenticate(Credential credential) throws LoginException;
 
-    public abstract Credential fetchCredentials();
+    protected abstract Credential fetchCredentials();
 }
