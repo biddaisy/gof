@@ -5,13 +5,13 @@ package com.mr.gof.behavioral.templatemethod;
  */
 public class TokenCredential extends Credential{
 
-    private String token;
+    private int token;
 
-    public String getToken() {
+    public int getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(int token) {
         this.token = token;
     }
 }

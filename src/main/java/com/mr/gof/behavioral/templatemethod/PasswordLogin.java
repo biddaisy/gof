@@ -22,7 +22,7 @@ public class PasswordLogin extends Login {
 
     @Override
     public void postAuthentication(LoginResult loginResult) {
-        System.out.println ("PasswordLogin.postAuthentication");
+        System.out.printf("PasswordLogin.postAuthentication: %s%n", loginResult);
     }
 
     @Override

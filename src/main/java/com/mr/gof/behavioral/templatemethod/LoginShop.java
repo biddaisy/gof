@@ -24,5 +24,17 @@ public class LoginShop {
         } catch (LoginException e) {
             e.printStackTrace ( );
         }
+
+        login = "login7";
+        int token = 2;
+
+        TokenLogin tokenLogin = new TokenLogin(login, token);
+
+        try {
+            LoginResult loginResult = tokenLogin.login ();
+            System.out.println(loginResult);
+        } catch (LoginException e) {
+            e.printStackTrace ( );
+        }
     }
 }

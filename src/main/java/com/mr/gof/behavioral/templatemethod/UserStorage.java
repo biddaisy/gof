@@ -27,6 +27,10 @@ public class UserStorage {
         users.add(createPasswordUser ("user3", "login3", "password3"));
         users.add(createPasswordUser ("user4", "login4", "password4"));
         users.add(createPasswordUser ("user5", "login5", "password5"));
+        users.add(createTokenUser("user6", "login6", 1));
+        users.add(createTokenUser("user7", "login7", 2));
+        users.add(createTokenUser("user8", "login8", 3));
+        users.add(createTokenUser("user9", "login9", 4));
     }
 
     public User findUserByLoginName(String loginName){
@@ -36,6 +40,13 @@ public class UserStorage {
             }
         }
         return null;
+    }
+
+    private static TokenUser createTokenUser(String userId, String loginName, int tokenId){
+        TokenUser tokenUser = new TokenUser(userId);
+        tokenUser.setLoginName(loginName);
+        tokenUser.setTokenId(tokenId);
+        return tokenUser;
     }
 
     private static PasswordUser createPasswordUser(String userId, String loginName, String password) throws UserStorageException {
