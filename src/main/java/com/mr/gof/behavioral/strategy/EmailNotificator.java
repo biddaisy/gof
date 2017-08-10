@@ -15,4 +15,5 @@ public class EmailNotificator implements Notificator {
     public void notify(Notification notification) {
         System.out.println(notification.getSubject()  + ": " + notification.getMessage() + " emailed to " + email);
     }
+
 }
