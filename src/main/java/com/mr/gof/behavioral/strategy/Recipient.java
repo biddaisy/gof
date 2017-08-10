@@ -90,4 +90,5 @@ public class Recipient {
                 throw new IllegalArgumentException("unknown notification strategy " + notificationStrategy);
         }
     }
+
 }
