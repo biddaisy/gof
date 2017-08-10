@@ -21,5 +21,4 @@ public class Bank {
         payment.pay(2, recipient2);
         payment.pay(3, recipient3);
     }
-
 }
