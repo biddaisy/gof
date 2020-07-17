@@ -1,19 +1,20 @@
 package com.mr.gof.behavioral.mediator;
 
 public class Currency {
-    private String code;
-    private String name;
+  private String code;
 
-    public Currency(String code, String name) {
-        this.code = code;
-        this.name = name;
-    }
+  private String name;
 
-    public String getCode() {
-        return code;
-    }
+  public Currency(String code, String name) {
+    this.code = code;
+    this.name = name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getCode() {
+    return code;
+  }
+
+  public String getName() {
+    return name;
+  }
 }

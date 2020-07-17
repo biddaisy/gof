@@ -2,14 +2,14 @@ package com.mr.gof.behavioral.mediator;
 
 public class Account {
 
-    private String number;
+  private String number;
 
-    public Account(String number) {
-        this.number = number;
-    }
+  public Account(String number) {
+    this.number = number;
+  }
 
-    public String getNumber() {
-        return number;
-    }
+  public String getNumber() {
+    return number;
+  }
 
 }

@@ -5,42 +5,41 @@ package com.mr.gof.behavioral.visitor;
  */
 public class IncomeVisitor implements Visitor {
 
-    private int superBossIncome;
-    private int bossIncome;
-    private int employeeIncome;
+  private int superBossIncome;
 
-    @Override
-    public void visit(Employee employee){
-        employeeIncome += employee.getSalary() + employee.getIncentiveBonus();
-        System.out.println("IncomeVisitor.visit Employee " + employee.getName());
-    }
+  private int bossIncome;
 
-    @Override
-    public void visit(Boss boss){
-        bossIncome += boss.getSalary() + boss.getAnnualBonus();
-        System.out.println("IncomeVisitor.visit Boss " + boss.getName());
-    }
+  private int employeeIncome;
 
-    @Override
-    public void visit(SuperBoss superBoss){
-        superBossIncome += superBoss.getSalary() + superBoss.getAnnualBonus() + superBoss.getOptionBonus();
-        System.out.println("IncomeVisitor.visit SuperBoss " + superBoss.getName());
-    }
+  @Override public void visit(Employee employee) {
+    employeeIncome += employee.getSalary() + employee.getIncentiveBonus();
+    System.out.println("IncomeVisitor.visit Employee " + employee.getName());
+  }
 
-    public int getTotalIncome(){
-        return superBossIncome + bossIncome + employeeIncome;
-    }
+  @Override public void visit(Boss boss) {
+    bossIncome += boss.getSalary() + boss.getAnnualBonus();
+    System.out.println("IncomeVisitor.visit Boss " + boss.getName());
+  }
 
-    public int getSuperBossIncome() {
-        return superBossIncome;
-    }
+  @Override public void visit(SuperBoss superBoss) {
+    superBossIncome += superBoss.getSalary() + superBoss.getAnnualBonus() + superBoss.getOptionBonus();
+    System.out.println("IncomeVisitor.visit SuperBoss " + superBoss.getName());
+  }
 
-    public int getBossIncome() {
-        return bossIncome;
-    }
+  public int getTotalIncome() {
+    return superBossIncome + bossIncome + employeeIncome;
+  }
 
-    public int getEmployeeIncome() {
-        return employeeIncome;
-    }
+  public int getSuperBossIncome() {
+    return superBossIncome;
+  }
+
+  public int getBossIncome() {
+    return bossIncome;
+  }
+
+  public int getEmployeeIncome() {
+    return employeeIncome;
+  }
 
 }

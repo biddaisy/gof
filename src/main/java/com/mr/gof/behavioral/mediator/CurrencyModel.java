@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CurrencyModel {
-    private Currency selectedCurrency;
-    private List<Currency> currencies = new ArrayList<Currency>();
+  private Currency selectedCurrency;
 
-    public Currency getSelectedCurrency() {
-        return selectedCurrency;
-    }
+  private List<Currency> currencies = new ArrayList<Currency>();
 
-    public void setSelectedCurrency(Currency selectedCurrency) {
-        this.selectedCurrency = selectedCurrency;
-    }
+  public Currency getSelectedCurrency() {
+    return selectedCurrency;
+  }
 
-    public List<Currency> getCurrencies() {
-        return new ArrayList<Currency>(currencies);
-    }
+  public void setSelectedCurrency(Currency selectedCurrency) {
+    this.selectedCurrency = selectedCurrency;
+  }
+
+  public List<Currency> getCurrencies() {
+    return new ArrayList<Currency>(currencies);
+  }
 }

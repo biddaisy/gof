@@ -5,19 +5,18 @@ package com.mr.gof.behavioral.visitor;
  */
 public class SuperBoss extends Boss {
 
-    private int optionBonus;
+  private int optionBonus;
 
-    public int getOptionBonus() {
-        return optionBonus;
-    }
+  public int getOptionBonus() {
+    return optionBonus;
+  }
 
-    public void setOptionBonus(int optionBonus) {
-        this.optionBonus = optionBonus;
-    }
+  public void setOptionBonus(int optionBonus) {
+    this.optionBonus = optionBonus;
+  }
 
-    @Override
-    public void accept (Visitor visitor){
-        visitor.visit(this);
-        acceptEmployees(visitor);
-    }
+  @Override public void accept(Visitor visitor) {
+    visitor.visit(this);
+    acceptEmployees(visitor);
+  }
 }

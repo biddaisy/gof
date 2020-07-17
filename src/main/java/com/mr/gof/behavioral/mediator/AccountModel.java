@@ -4,19 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountModel {
-    private Account selectedAccount;
-    private List<Account>  accounts = new ArrayList<Account>();
+  private Account selectedAccount;
 
-    public Account getSelectedAccount() {
-        return selectedAccount;
-    }
+  private final List<Account> accounts = new ArrayList<Account>();
 
-    public void setSelectedAccount(Account selectedAccount) {
-        this.selectedAccount = selectedAccount;
-    }
+  public Account getSelectedAccount() {
+    return selectedAccount;
+  }
 
-    public List<Account> getAccounts() {
-        return new ArrayList<Account>(accounts);
-    }
+  public void setSelectedAccount(Account selectedAccount) {
+    this.selectedAccount = selectedAccount;
+  }
+
+  public List<Account> getAccounts() {
+    return new ArrayList<Account>(accounts);
+  }
 }
 

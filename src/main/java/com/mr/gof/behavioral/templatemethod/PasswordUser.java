@@ -5,26 +5,27 @@ package com.mr.gof.behavioral.templatemethod;
  */
 public class PasswordUser extends User {
 
-    private String passwordDigest;
-    private int salt;
+  private String passwordDigest;
 
-    public PasswordUser(String userId) {
-        super(userId);
-    }
+  private int salt;
 
-    public String getPasswordDigest() {
-        return passwordDigest;
-    }
+  public PasswordUser(String userId) {
+    super(userId);
+  }
 
-    public void setPasswordDigest(String passwordDigest) {
-        this.passwordDigest = passwordDigest;
-    }
+  public String getPasswordDigest() {
+    return passwordDigest;
+  }
 
-    public int getSalt() {
-        return salt;
-    }
+  public void setPasswordDigest(String passwordDigest) {
+    this.passwordDigest = passwordDigest;
+  }
 
-    public void setSalt(int salt) {
-        this.salt = salt;
-    }
+  public int getSalt() {
+    return salt;
+  }
+
+  public void setSalt(int salt) {
+    this.salt = salt;
+  }
 }

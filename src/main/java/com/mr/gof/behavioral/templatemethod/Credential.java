@@ -5,14 +5,14 @@ package com.mr.gof.behavioral.templatemethod;
  */
 public class Credential {
 
-    private String loginName;
+  private String loginName;
 
-    public String getLoginName() {
-        return loginName;
-    }
+  public String getLoginName() {
+    return loginName;
+  }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
+  public void setLoginName(String loginName) {
+    this.loginName = loginName;
+  }
 
 }

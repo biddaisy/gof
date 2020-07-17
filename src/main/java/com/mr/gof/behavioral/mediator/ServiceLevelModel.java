@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceLevelModel {
-    private ServiceLevel selectedServiceLevel;
-    private List<ServiceLevel> serviceLevels = new ArrayList<ServiceLevel>();
+  private ServiceLevel selectedServiceLevel;
 
-    public ServiceLevel getSelectedServiceLevel() {
-        return selectedServiceLevel;
-    }
+  private List<ServiceLevel> serviceLevels = new ArrayList<ServiceLevel>();
 
-    public void setSelectedServiceLevel(ServiceLevel selectedServiceLevel) {
-        this.selectedServiceLevel = selectedServiceLevel;
-    }
+  public ServiceLevel getSelectedServiceLevel() {
+    return selectedServiceLevel;
+  }
 
-    public List<ServiceLevel> getServiceLevels() {
-        return new ArrayList<ServiceLevel>(serviceLevels);
-    }
+  public void setSelectedServiceLevel(ServiceLevel selectedServiceLevel) {
+    this.selectedServiceLevel = selectedServiceLevel;
+  }
+
+  public List<ServiceLevel> getServiceLevels() {
+    return new ArrayList<ServiceLevel>(serviceLevels);
+  }
 }

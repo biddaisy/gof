@@ -8,47 +8,46 @@ import java.util.List;
  */
 public class PersonnelVisitor implements Visitor {
 
-    private int employeeAmount;
-    private int bossAmount;
-    private int superBossAmount;
+  private int employeeAmount;
 
-    private List<String> personnel = new ArrayList<String>();
+  private int bossAmount;
 
-    @Override
-    public void visit(Employee employee) {
-        employeeAmount++;
-        personnel.add( "Employee: " + employee.getName() );
-    }
+  private int superBossAmount;
 
-    @Override
-    public void visit(Boss boss) {
-        bossAmount++;
-        personnel.add( "Boss: " + boss.getName() );
-    }
+  private List<String> personnel = new ArrayList<>();
 
-    @Override
-    public void visit(SuperBoss superBoss) {
-        superBossAmount++;
-        personnel.add( "Super Boss: " + superBoss.getName() );
-    }
+  @Override public void visit(Employee employee) {
+    employeeAmount++;
+    personnel.add("Employee: " + employee.getName());
+  }
 
-    public int getEmployeeAmount() {
-        return employeeAmount;
-    }
+  @Override public void visit(Boss boss) {
+    bossAmount++;
+    personnel.add("Boss: " + boss.getName());
+  }
 
-    public int getBossAmount() {
-        return bossAmount;
-    }
+  @Override public void visit(SuperBoss superBoss) {
+    superBossAmount++;
+    personnel.add("Super Boss: " + superBoss.getName());
+  }
 
-    public int getSuperBossAmount() {
-        return superBossAmount;
-    }
+  public int getEmployeeAmount() {
+    return employeeAmount;
+  }
 
-    public int getPersonnelAmount(){
-        return employeeAmount + bossAmount + superBossAmount;
-    }
+  public int getBossAmount() {
+    return bossAmount;
+  }
 
-    public String getPersonnel(){
-        return personnel.toString();
-    }
+  public int getSuperBossAmount() {
+    return superBossAmount;
+  }
+
+  public int getPersonnelAmount() {
+    return employeeAmount + bossAmount + superBossAmount;
+  }
+
+  public String getPersonnel() {
+    return personnel.toString();
+  }
 }

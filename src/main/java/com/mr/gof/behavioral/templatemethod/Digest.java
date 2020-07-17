@@ -5,22 +5,23 @@ package com.mr.gof.behavioral.templatemethod;
  */
 public class Digest {
 
-    private String digest;
-    private int salt;
+  private String digest;
 
-    public String getDigest() {
-        return digest;
-    }
+  private int salt;
 
-    public void setDigest(String digest) {
-        this.digest = digest;
-    }
+  public String getDigest() {
+    return digest;
+  }
 
-    public int getSalt() {
-        return salt;
-    }
+  public void setDigest(String digest) {
+    this.digest = digest;
+  }
 
-    public void setSalt(int salt) {
-        this.salt = salt;
-    }
+  public int getSalt() {
+    return salt;
+  }
+
+  public void setSalt(int salt) {
+    this.salt = salt;
+  }
 }

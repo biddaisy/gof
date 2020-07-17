@@ -5,6 +5,6 @@ package com.mr.gof.behavioral.strategy;
  */
 public interface Notificator {
 
-    void notify(Notification notification);
+  void notify(Notification notification);
 
 }

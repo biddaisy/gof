@@ -5,38 +5,28 @@ import java.util.Map;
 
 public class Bank {
 
-    private Map<String, Account> accounts = new HashMap<String, Account>();
-    private Government government = new Government();
-    private static int accountNumberCounter;
+  private static int accountNumberCounter;
 
-    public String addAccount(String accountOwnerName){
-        AccountOwner accountOwner = new AccountOwner(accountOwnerName);
-        Account account = new Account(accountOwner, "account" + accountNumberCounter++);
-        account.register(government);
-        accounts.put(account.getAccountNumber(), account);
-        return account.getAccountNumber();
-    }
+  private final Map<String, Account> accounts = new HashMap<String, Account>();
 
-    public void depositAmount(String accountNumber, int amount){
-        Account account = accounts.get(accountNumber);
-        account.deposit(amount);
-    }
+  private final Government government = new Government();
 
-    private void withdrawAmount(String accountNumber, int amount){
-        Account account = accounts.get(accountNumber);
-        account.withdraw(amount);
-    }
+  public String addAccount(String accountOwnerName) {
+    AccountOwner accountOwner = new AccountOwner(accountOwnerName);
+    Account account = new Account(accountOwner, "account" + accountNumberCounter++);
+    account.register(government);
+    accounts.put(account.getAccountNumber(), account);
+    return account.getAccountNumber();
+  }
 
-    public static void main(String[] args){
-        Bank bank = new Bank();
-        String smithsAccountNumber = bank.addAccount("John Smith");
-        String smirnovsAccountNumber = bank.addAccount("Ivan Smirnov");
+  public void depositAmount(String accountNumber, int amount) {
+    Account account = accounts.get(accountNumber);
+    account.deposit(amount);
+  }
 
-        bank.depositAmount(smithsAccountNumber, 100);
-        bank.depositAmount(smirnovsAccountNumber, 1000);
+  public void withdrawAmount(String accountNumber, int amount) {
+    Account account = accounts.get(accountNumber);
+    account.withdraw(amount);
+  }
 
-        bank.withdrawAmount(smithsAccountNumber, 99);
-        bank.withdrawAmount(smirnovsAccountNumber, 999);
-
-    }
 }

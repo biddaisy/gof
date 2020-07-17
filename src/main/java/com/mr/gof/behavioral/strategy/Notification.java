@@ -5,23 +5,24 @@ package com.mr.gof.behavioral.strategy;
  */
 public class Notification {
 
-    private String subject;
-    private String message;
+  private String subject;
 
-    public String getSubject() {
-        return subject;
-    }
+  private String message;
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
+  public String getSubject() {
+    return subject;
+  }
 
-    public String getMessage() {
-        return message;
-    }
+  public void setSubject(String subject) {
+    this.subject = subject;
+  }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
 
 }

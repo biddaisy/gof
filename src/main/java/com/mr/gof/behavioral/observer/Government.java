@@ -1,8 +1,5 @@
 package com.mr.gof.behavioral.observer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Government implements Observer {
 
     @Override
