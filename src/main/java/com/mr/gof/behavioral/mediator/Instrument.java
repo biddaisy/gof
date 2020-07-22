@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Instrument {
 
-  private final Account orderingAccount;
+  private final Bank bank;
 
   private final List<Currency> transferCurrencies;
 
@@ -12,15 +12,15 @@ public class Instrument {
 
   private final ServiceLevel serviceLevel;
 
-  public Instrument(Account orderingAccount, List<Currency> transferCurrencies, Country beneficiaryCountry, ServiceLevel serviceLevel) {
-    this.orderingAccount = orderingAccount;
+  public Instrument(Bank bank, List<Currency> transferCurrencies, Country beneficiaryCountry, ServiceLevel serviceLevel) {
+    this.bank = bank;
     this.transferCurrencies = transferCurrencies;
     this.beneficiaryCountry = beneficiaryCountry;
     this.serviceLevel = serviceLevel;
   }
 
-  public Account getOrderingAccount() {
-    return orderingAccount;
+  public Bank getBank() {
+    return bank;
   }
 
   public List<Currency> getTransferCurrencies() {

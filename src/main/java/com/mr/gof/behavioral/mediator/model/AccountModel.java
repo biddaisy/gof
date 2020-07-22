@@ -1,4 +1,6 @@
-package com.mr.gof.behavioral.mediator;
+package com.mr.gof.behavioral.mediator.model;
+
+import com.mr.gof.behavioral.mediator.Account;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,6 @@ public class AccountModel {
   }
 
   public List<Account> getAccounts() {
-    return new ArrayList<Account>(accounts);
+    return new ArrayList<>(accounts);
   }
 }
-

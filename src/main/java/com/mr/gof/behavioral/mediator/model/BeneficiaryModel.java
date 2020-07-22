@@ -1,4 +1,6 @@
-package com.mr.gof.behavioral.mediator;
+package com.mr.gof.behavioral.mediator.model;
+
+import com.mr.gof.behavioral.mediator.Beneficiary;
 
 import java.util.ArrayList;
 import java.util.List;
