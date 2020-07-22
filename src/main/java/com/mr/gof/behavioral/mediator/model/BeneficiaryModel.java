@@ -1,11 +1,11 @@
 package com.mr.gof.behavioral.mediator.model;
 
-import com.mr.gof.behavioral.mediator.Beneficiary;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class BeneficiaryModel {
+import com.mr.gof.behavioral.mediator.Beneficiary;
+
+public class BeneficiaryModel extends BaseModel {
   private Beneficiary selectedBeneficiary;
 
   private List<Beneficiary> beneficiaries = new ArrayList<Beneficiary>();
@@ -16,6 +16,7 @@ public class BeneficiaryModel {
 
   public void setSelectedBeneficiary(Beneficiary selectedBeneficiary) {
     this.selectedBeneficiary = selectedBeneficiary;
+    changed();
   }
 
   public List<Beneficiary> getBeneficiaries() {

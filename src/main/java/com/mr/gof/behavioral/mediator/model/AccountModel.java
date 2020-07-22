@@ -1,11 +1,12 @@
 package com.mr.gof.behavioral.mediator.model;
 
-import com.mr.gof.behavioral.mediator.Account;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountModel {
+import com.mr.gof.behavioral.mediator.Account;
+
+public class AccountModel extends BaseModel {
+
   private Account selectedAccount;
 
   private final List<Account> accounts = new ArrayList<Account>();
@@ -16,6 +17,7 @@ public class AccountModel {
 
   public void setSelectedAccount(Account selectedAccount) {
     this.selectedAccount = selectedAccount;
+    changed();
   }
 
   public List<Account> getAccounts() {

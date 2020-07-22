@@ -12,27 +12,27 @@ import java.util.List;
 
 public class Instruments {
 
-  private List<Instrument> instruments;
+  private List<Instrument> instrumentList;
 
   {
-    instruments = new ArrayList<>();
+    instrumentList = new ArrayList<>();
 
-    instruments.add(new Instrument(FIRST_NATIONAL_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
-    instruments.add(new Instrument(FIRST_NATIONAL_BANK, Arrays.asList(BYN), BELARUS, URGENT));
-    instruments.add(new Instrument(FIRST_NATIONAL_BANK, Arrays.asList(ZAR), SOUTH_AFRICA, ULTIMATE));
+    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
+    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Collections.singletonList(BYN), BELARUS, URGENT));
+    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Collections.singletonList(ZAR), SOUTH_AFRICA, ULTIMATE));
 
-    instruments.add(new Instrument(NON_STANDARD_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
-    instruments.add(new Instrument(NON_STANDARD_BANK, Arrays.asList(BYN), BELARUS, URGENT));
-    instruments.add(new Instrument(NON_STANDARD_BANK, Arrays.asList(ZAR), SOUTH_AFRICA, ULTIMATE));
+    instrumentList.add(new Instrument(NON_STANDARD_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
+    instrumentList.add(new Instrument(NON_STANDARD_BANK, Collections.singletonList(BYN), BELARUS, URGENT));
+    instrumentList.add(new Instrument(NON_STANDARD_BANK, Collections.singletonList(ZAR), SOUTH_AFRICA, ULTIMATE));
 
-    instruments.add(new Instrument(CROCODILE_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
-    instruments.add(new Instrument(CROCODILE_BANK, Arrays.asList(BYN), BELARUS, URGENT));
-    instruments.add(new Instrument(CROCODILE_BANK, Arrays.asList(ZAR), SOUTH_AFRICA, ULTIMATE));
+    instrumentList.add(new Instrument(CROCODILE_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
+    instrumentList.add(new Instrument(CROCODILE_BANK, Collections.singletonList(BYN), BELARUS, URGENT));
+    instrumentList.add(new Instrument(CROCODILE_BANK, Collections.singletonList(ZAR), SOUTH_AFRICA, ULTIMATE));
 
-    instruments = Collections.unmodifiableList(instruments);
+    instrumentList = Collections.unmodifiableList(instrumentList);
   }
 
-  public List<Instrument> getInstruments() {
-    return instruments;
+  public List<Instrument> getInstrumentList() {
+    return instrumentList;
   }
 }

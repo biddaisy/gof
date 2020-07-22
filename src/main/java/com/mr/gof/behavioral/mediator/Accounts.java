@@ -9,30 +9,30 @@ import java.util.List;
 
 public class Accounts {
 
-  private List<Account> accounts;
+  private List<Account> accountList;
 
   {
-    accounts = new ArrayList<>();
+    accountList = new ArrayList<>();
 
-    accounts.add(new Account("1", USD, FIRST_NATIONAL_BANK));
-    accounts.add(new Account("2", ZAR, FIRST_NATIONAL_BANK));
-    accounts.add(new Account("3", BYN, FIRST_NATIONAL_BANK));
-    accounts.add(new Account("4", EUR, FIRST_NATIONAL_BANK));
+    accountList.add(new Account("1", USD, FIRST_NATIONAL_BANK));
+    accountList.add(new Account("2", ZAR, FIRST_NATIONAL_BANK));
+    accountList.add(new Account("3", BYN, FIRST_NATIONAL_BANK));
+    accountList.add(new Account("4", EUR, FIRST_NATIONAL_BANK));
 
-    accounts.add(new Account("5", USD, NON_STANDARD_BANK));
-    accounts.add(new Account("6", ZAR, NON_STANDARD_BANK));
-    accounts.add(new Account("7", BYN, NON_STANDARD_BANK));
-    accounts.add(new Account("8", EUR, NON_STANDARD_BANK));
+    accountList.add(new Account("5", USD, NON_STANDARD_BANK));
+    accountList.add(new Account("6", ZAR, NON_STANDARD_BANK));
+    accountList.add(new Account("7", BYN, NON_STANDARD_BANK));
+    accountList.add(new Account("8", EUR, NON_STANDARD_BANK));
 
-    accounts.add(new Account("9", USD, CROCODILE_BANK));
-    accounts.add(new Account("10", ZAR, CROCODILE_BANK));
-    accounts.add(new Account("11", BYN, CROCODILE_BANK));
-    accounts.add(new Account("12", EUR, CROCODILE_BANK));
+    accountList.add(new Account("9", USD, CROCODILE_BANK));
+    accountList.add(new Account("10", ZAR, CROCODILE_BANK));
+    accountList.add(new Account("11", BYN, CROCODILE_BANK));
+    accountList.add(new Account("12", EUR, CROCODILE_BANK));
 
-    accounts = Collections.unmodifiableList(accounts);
+    accountList = Collections.unmodifiableList(accountList);
   }
 
-  public List<Account> getAccounts() {
-    return accounts;
+  public List<Account> getAccountList() {
+    return accountList;
   }
 }

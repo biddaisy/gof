@@ -1,11 +1,12 @@
 package com.mr.gof.behavioral.mediator.model;
 
 import com.mr.gof.behavioral.mediator.Currency;
+import com.mr.gof.behavioral.mediator.InstrumentResolver;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CurrencyModel {
+public class CurrencyModel extends BaseModel{
   private Currency selectedCurrency;
 
   private List<Currency> currencies = new ArrayList<Currency>();
@@ -21,4 +22,5 @@ public class CurrencyModel {
   public List<Currency> getCurrencies() {
     return new ArrayList<Currency>(currencies);
   }
+
 }
