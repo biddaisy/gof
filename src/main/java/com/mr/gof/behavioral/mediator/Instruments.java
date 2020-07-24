@@ -35,4 +35,11 @@ public class Instruments {
   public List<Instrument> getInstrumentList() {
     return instrumentList;
   }
+
+  public List<Currency> getTransferCurrencies(Bank bank) {
+    return instrumentList.stream().filter(i -> i.getBank() == bank).map(Instrument::getTransferCurrencies).reduce((cl1, cl2) -> {
+      cl1.addAll(cl2);
+      return cl1;
+    }).orElse(Collections.emptyList());
+  }
 }

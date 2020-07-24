@@ -20,7 +20,10 @@ public class CurrencyModel extends BaseModel{
   }
 
   public List<Currency> getCurrencies() {
-    return new ArrayList<Currency>(currencies);
+    return new ArrayList<>(currencies);
   }
 
+  public void setCurrencies(List<Currency> currencies) {
+    this.currencies = currencies;
+  }
 }
