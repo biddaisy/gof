@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class Digester {
 
-  private final static Random RANDOM = new SecureRandom();
+  private static final  Random RANDOM = new SecureRandom();
 
   public static Digest calculateDigest(String password) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 

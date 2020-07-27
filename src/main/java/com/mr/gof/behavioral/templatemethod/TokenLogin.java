@@ -16,11 +16,13 @@ public class TokenLogin extends Login {
     this.token = token;
   }
 
-  @Override protected void postAuthentication(LoginResult loginResult) {
+  @Override
+  protected void postAuthentication(LoginResult loginResult) {
     System.out.printf("TokenLogin.postAuthentication: %s%n", loginResult);
   }
 
-  @Override protected LoginResult authenticate(Credential credential) throws LoginException {
+  @Override
+  protected LoginResult authenticate(Credential credential) throws LoginException {
     TokenCredential tokenCredentials = (TokenCredential) credential;
     TokenUser user = (TokenUser) UserStorage.getInstance().findUserByLoginName(tokenCredentials.getLoginName());
     if (user == null) {
@@ -36,7 +38,8 @@ public class TokenLogin extends Login {
     }
   }
 
-  @Override protected Credential fetchCredentials() {
+  @Override
+  protected Credential fetchCredentials() {
     TokenCredential credentials = new TokenCredential();
     credentials.setLoginName(loginName);
     credentials.setToken(token);

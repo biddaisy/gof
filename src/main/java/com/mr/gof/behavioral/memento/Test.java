@@ -1,7 +1,5 @@
 package com.mr.gof.behavioral.memento;
 
-import com.mr.gof.behavioral.memento.Editor;
-
 public class Test {
 
   public static void main(String[] args) {

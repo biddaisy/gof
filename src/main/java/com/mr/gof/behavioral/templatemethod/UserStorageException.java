@@ -5,12 +5,12 @@ package com.mr.gof.behavioral.templatemethod;
  */
 public class UserStorageException extends Exception {
 
-    public UserStorageException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public UserStorageException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    public UserStorageException(Throwable cause) {
-        super(cause);
-    }
+  public UserStorageException(Throwable cause) {
+    super(cause);
+  }
 
 }

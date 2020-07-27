@@ -11,7 +11,8 @@ public class SkypeNotificator implements Notificator {
     this.skype = skype;
   }
 
-  @Override public void notify(Notification notification) {
+  @Override
+  public void notify(Notification notification) {
     System.out.println(notification.getSubject() + ": " + notification.getMessage() + " sent to " + skype);
   }
 }

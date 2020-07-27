@@ -15,7 +15,7 @@ public class Test {
     }
 
     String login = "login1";
-    String password = /*"wrong" + */"password1";
+    String password = /* "wrong" + */"password1";
 
     PasswordLogin passwordLogin = new PasswordLogin(login, password);
 

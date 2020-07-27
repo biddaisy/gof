@@ -20,7 +20,8 @@ public class Boss extends Employee {
     this.annualBonus = annualBonus;
   }
 
-  @Override public void accept(Visitor visitor) {
+  @Override
+  public void accept(Visitor visitor) {
     visitor.visit(this);
     acceptEmployees(visitor);
   }

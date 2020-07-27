@@ -7,7 +7,8 @@ public class AuditState implements PaymentState {
     this.amount = amount;
   }
 
-  @Override public PaymentState doAction() {
+  @Override
+  public PaymentState doAction() {
     System.out.println("audit done");
     return new AuthorizationState(amount);
   }

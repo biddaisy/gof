@@ -11,7 +11,8 @@ public class EmailNotificator implements Notificator {
     this.email = email;
   }
 
-  @Override public void notify(Notification notification) {
+  @Override
+  public void notify(Notification notification) {
     System.out.println(notification.getSubject() + ": " + notification.getMessage() + " emailed to " + email);
   }
 

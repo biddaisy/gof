@@ -7,7 +7,8 @@ public class AuthorizationState implements PaymentState {
     this.amount = amount;
   }
 
-  @Override public PaymentState doAction() {
+  @Override
+  public PaymentState doAction() {
     System.out.println("authorization done");
     return new ApprovalState(amount);
   }

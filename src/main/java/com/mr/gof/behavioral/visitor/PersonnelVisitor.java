@@ -16,17 +16,20 @@ public class PersonnelVisitor implements Visitor {
 
   private List<String> personnel = new ArrayList<>();
 
-  @Override public void visit(Employee employee) {
+  @Override
+  public void visit(Employee employee) {
     employeeAmount++;
     personnel.add("Employee: " + employee.getName());
   }
 
-  @Override public void visit(Boss boss) {
+  @Override
+  public void visit(Boss boss) {
     bossAmount++;
     personnel.add("Boss: " + boss.getName());
   }
 
-  @Override public void visit(SuperBoss superBoss) {
+  @Override
+  public void visit(SuperBoss superBoss) {
     superBossAmount++;
     personnel.add("Super Boss: " + superBoss.getName());
   }

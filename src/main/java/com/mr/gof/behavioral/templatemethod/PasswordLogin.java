@@ -1,9 +1,9 @@
 package com.mr.gof.behavioral.templatemethod;
 
+import static com.mr.gof.behavioral.templatemethod.LoginResult.*;
+
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-
-import static com.mr.gof.behavioral.templatemethod.LoginResult.*;
 
 /**
  * Created by Ramanovich on 1/14/2017.
@@ -19,11 +19,13 @@ public class PasswordLogin extends Login {
     this.password = password;
   }
 
-  @Override public void postAuthentication(LoginResult loginResult) {
+  @Override
+  public void postAuthentication(LoginResult loginResult) {
     System.out.printf("PasswordLogin.postAuthentication: %s%n", loginResult);
   }
 
-  @Override public LoginResult authenticate(Credential credential) throws LoginException {
+  @Override
+  public LoginResult authenticate(Credential credential) throws LoginException {
     PasswordCredential passwordCredentials = (PasswordCredential) credential;
     PasswordUser user = (PasswordUser) UserStorage.getInstance().findUserByLoginName(passwordCredentials.getLoginName());
     if (user == null) {
@@ -48,7 +50,8 @@ public class PasswordLogin extends Login {
 
   }
 
-  @Override public Credential fetchCredentials() {
+  @Override
+  public Credential fetchCredentials() {
     PasswordCredential passwordCredentials = new PasswordCredential();
     passwordCredentials.setLoginName(loginName);
     passwordCredentials.setPassword(password);

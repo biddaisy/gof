@@ -5,10 +5,10 @@ package com.mr.gof.behavioral.visitor;
  */
 public interface Visitor {
 
-    void visit(Employee employee);
+  void visit(Employee employee);
 
-    void visit(Boss boss);
+  void visit(Boss boss);
 
-    void visit(SuperBoss superBoss);
+  void visit(SuperBoss superBoss);
 
 }

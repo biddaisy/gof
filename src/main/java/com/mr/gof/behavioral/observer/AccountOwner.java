@@ -16,7 +16,8 @@ public class AccountOwner implements Observer {
     this.name = name;
   }
 
-  @Override public void update(Subject subject) {
+  @Override
+  public void update(Subject subject) {
     if (subject instanceof Account) {
       Account account = (Account) subject;
       System.out.println(name + "'s balance changed : " + account.getAmount());

@@ -5,17 +5,17 @@ package com.mr.gof.behavioral.templatemethod;
  */
 public class TokenUser extends User {
 
-    private int tokenId;
+  private int tokenId;
 
-    public TokenUser(String userId) {
-        super (userId);
-    }
+  public TokenUser(String userId) {
+    super(userId);
+  }
 
-    public int getTokenId() {
-        return tokenId;
-    }
+  public int getTokenId() {
+    return tokenId;
+  }
 
-    public void setTokenId(int tokenId) {
-        this.tokenId = tokenId;
-    }
+  public void setTokenId(int tokenId) {
+    this.tokenId = tokenId;
+  }
 }

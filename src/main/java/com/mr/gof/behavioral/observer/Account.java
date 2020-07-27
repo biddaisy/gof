@@ -41,15 +41,18 @@ public class Account implements Subject {
     notifyObservers();
   }
 
-  @Override public void register(Observer observer) {
+  @Override
+  public void register(Observer observer) {
     observers.add(observer);
   }
 
-  @Override public void unregister(Observer observer) {
+  @Override
+  public void unregister(Observer observer) {
     observers.remove(observer);
   }
 
-  @Override public void notifyObservers() {
+  @Override
+  public void notifyObservers() {
     for (Observer observer : observers) {
       observer.update(this);
     }
