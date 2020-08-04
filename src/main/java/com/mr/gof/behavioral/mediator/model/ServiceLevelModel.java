@@ -16,9 +16,10 @@ public class ServiceLevelModel extends BaseModel{
 
   public void setSelectedServiceLevel(ServiceLevel selectedServiceLevel) {
     this.selectedServiceLevel = selectedServiceLevel;
+    changed();
   }
 
   public List<ServiceLevel> getServiceLevels() {
-    return new ArrayList<ServiceLevel>(serviceLevels);
+    return new ArrayList<>(serviceLevels);
   }
 }

@@ -6,7 +6,7 @@ import com.mr.gof.behavioral.mediator.InstrumentResolver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CurrencyModel extends BaseModel{
+public class TransferCurrencyModel extends BaseModel{
   private Currency selectedCurrency;
 
   private List<Currency> currencies = new ArrayList<Currency>();
@@ -17,6 +17,7 @@ public class CurrencyModel extends BaseModel{
 
   public void setSelectedCurrency(Currency selectedCurrency) {
     this.selectedCurrency = selectedCurrency;
+    changed();
   }
 
   public List<Currency> getCurrencies() {

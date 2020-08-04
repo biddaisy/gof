@@ -20,6 +20,10 @@ public class BeneficiaryModel extends BaseModel {
   }
 
   public List<Beneficiary> getBeneficiaries() {
-    return new ArrayList<Beneficiary>(beneficiaries);
+    return new ArrayList<>(beneficiaries);
+  }
+
+  public void setBeneficiaries(List<Beneficiary> beneficiaries) {
+    this.beneficiaries = beneficiaries;
   }
 }

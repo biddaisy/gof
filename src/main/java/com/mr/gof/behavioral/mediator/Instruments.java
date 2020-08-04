@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Instruments {
 
@@ -42,4 +43,15 @@ public class Instruments {
       return cl1;
     }).orElse(Collections.emptyList());
   }
+
+  public List<Country> getServiceLevels(Bank bank, Currency currency){
+    return instrumentList.stream().filter(i -> i.getBank() == bank && i.getTransferCurrencies().contains(currency))
+        .map(Instrument::getBeneficiaryCountry).collect(Collectors.toList());
+  }
+
+  public List<ServiceLevel> getServiceLevels(Bank bank, Currency transferCurrency, Country beneficiaryCountry){
+    return instrumentList.stream().filter(i -> i.getBank() == bank && i.getTransferCurrencies().contains(transferCurrency) && i.getBeneficiaryCountry() == beneficiaryCountry)
+        .map(Instrument::getServiceLevel).collect(Collectors.toList());
+  }
+
 }

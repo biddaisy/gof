@@ -4,31 +4,31 @@ import com.mr.gof.behavioral.mediator.InstrumentResolver;
 
 public class ModelComposer {
 
-  private final AccountModel accountModel = new AccountModel();
+  private final OrderingAccountModel orderingAccountModel = new OrderingAccountModel();
 
   private final BeneficiaryModel beneficiaryModel = new BeneficiaryModel();
 
-  private final CurrencyModel currencyModel = new CurrencyModel();
+  private final TransferCurrencyModel transferCurrencyModel = new TransferCurrencyModel();
 
   private final ServiceLevelModel serviceLevelModel = new ServiceLevelModel();
 
   public void init(InstrumentResolver instrumentResolver) {
-    accountModel.setInstrumentResolver(instrumentResolver);
+    orderingAccountModel.setInstrumentResolver(instrumentResolver);
     beneficiaryModel.setInstrumentResolver(instrumentResolver);
-    currencyModel.setInstrumentResolver(instrumentResolver);
+    transferCurrencyModel.setInstrumentResolver(instrumentResolver);
     serviceLevelModel.setInstrumentResolver(instrumentResolver);
   }
 
-  public AccountModel getAccountModel() {
-    return accountModel;
+  public OrderingAccountModel getAccountModel() {
+    return orderingAccountModel;
   }
 
   public BeneficiaryModel getBeneficiaryModel() {
     return beneficiaryModel;
   }
 
-  public CurrencyModel getCurrencyModel() {
-    return currencyModel;
+  public TransferCurrencyModel getCurrencyModel() {
+    return transferCurrencyModel;
   }
 
   public ServiceLevelModel getServiceLevelModel() {

@@ -9,6 +9,11 @@ import java.util.List;
 
 public class Accounts {
 
+  public static final Accounts ACCOUNTS = new Accounts();
+
+  private Accounts() {
+  }
+
   private List<Account> accountList;
 
   {

@@ -4,8 +4,14 @@ import static com.mr.gof.behavioral.mediator.Country.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Beneficiaries {
+
+  public static final Beneficiaries INSTANCE = new Beneficiaries();
+
+  private Beneficiaries() {
+  }
 
   private List<Beneficiary> beneficiaryList;
 
@@ -25,7 +31,7 @@ public class Beneficiaries {
     beneficiaryList = Collections.unmodifiableList(beneficiaryList);
   }
 
-  public List<Beneficiary> getBeneficiaryList() {
-    return beneficiaryList;
+  public List<Beneficiary> getBeneficiaryListByCountries(List<Country> countries) {
+    return beneficiaryList.stream().filter(b -> countries.contains(b.getCountry())).collect(Collectors.toList());
   }
 }

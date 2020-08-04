@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.mr.gof.behavioral.mediator.Account;
 
-public class AccountModel extends BaseModel {
+public class OrderingAccountModel extends BaseModel {
 
   private Account selectedAccount;
 
