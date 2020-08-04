@@ -4,12 +4,14 @@ import com.mr.gof.behavioral.mediator.Currency;
 import com.mr.gof.behavioral.mediator.InstrumentResolver;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class TransferCurrencyModel extends BaseModel{
   private Currency selectedCurrency;
 
-  private List<Currency> currencies = new ArrayList<Currency>();
+  private Set<Currency> currencies = new HashSet<>();
 
   public Currency getSelectedCurrency() {
     return selectedCurrency;
@@ -25,6 +27,6 @@ public class TransferCurrencyModel extends BaseModel{
   }
 
   public void setCurrencies(List<Currency> currencies) {
-    this.currencies = currencies;
+    this.currencies = new HashSet<>(currencies);
   }
 }

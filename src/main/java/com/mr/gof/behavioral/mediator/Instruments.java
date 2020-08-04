@@ -5,11 +5,9 @@ import static com.mr.gof.behavioral.mediator.Country.*;
 import static com.mr.gof.behavioral.mediator.Currency.*;
 import static com.mr.gof.behavioral.mediator.ServiceLevel.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Instruments {
 
@@ -38,19 +36,18 @@ public class Instruments {
   }
 
   public List<Currency> getTransferCurrencies(Bank bank) {
-    return instrumentList.stream().filter(i -> i.getBank() == bank).map(Instrument::getTransferCurrencies).reduce((cl1, cl2) -> {
-      cl1.addAll(cl2);
-      return cl1;
-    }).orElse(Collections.emptyList());
+    return instrumentList.stream().filter(i -> i.getBank() == bank).map(Instrument::getTransferCurrencies)
+        .reduce((tc1, tc2) -> Stream.of(tc1, tc2).flatMap(Collection::stream).collect(Collectors.toList())).orElse(Collections.emptyList());
   }
 
-  public List<Country> getServiceLevels(Bank bank, Currency currency){
-    return instrumentList.stream().filter(i -> i.getBank() == bank && i.getTransferCurrencies().contains(currency))
-        .map(Instrument::getBeneficiaryCountry).collect(Collectors.toList());
+  public List<Country> getBeneficiaryCountries(Bank bank, Currency currency) {
+    return instrumentList.stream().filter(i -> i.getBank() == bank && i.getTransferCurrencies().contains(currency)).map(Instrument::getBeneficiaryCountry)
+        .collect(Collectors.toList());
   }
 
-  public List<ServiceLevel> getServiceLevels(Bank bank, Currency transferCurrency, Country beneficiaryCountry){
-    return instrumentList.stream().filter(i -> i.getBank() == bank && i.getTransferCurrencies().contains(transferCurrency) && i.getBeneficiaryCountry() == beneficiaryCountry)
+  public List<ServiceLevel> getServiceLevels(Bank bank, Currency transferCurrency, Country beneficiaryCountry) {
+    return instrumentList.stream()
+        .filter(i -> i.getBank() == bank && i.getTransferCurrencies().contains(transferCurrency) && i.getBeneficiaryCountry() == beneficiaryCountry)
         .map(Instrument::getServiceLevel).collect(Collectors.toList());
   }
 

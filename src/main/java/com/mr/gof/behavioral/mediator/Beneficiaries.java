@@ -2,6 +2,7 @@ package com.mr.gof.behavioral.mediator;
 
 import static com.mr.gof.behavioral.mediator.Country.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +14,7 @@ public class Beneficiaries {
   private Beneficiaries() {
   }
 
-  private List<Beneficiary> beneficiaryList;
+  private List<Beneficiary> beneficiaryList = new ArrayList<>();
 
   {
     beneficiaryList.add(new Beneficiary("bene 1", USA));

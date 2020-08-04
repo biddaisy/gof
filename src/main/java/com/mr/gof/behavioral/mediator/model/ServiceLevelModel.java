@@ -1,11 +1,11 @@
 package com.mr.gof.behavioral.mediator.model;
 
-import com.mr.gof.behavioral.mediator.ServiceLevel;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceLevelModel extends BaseModel{
+import com.mr.gof.behavioral.mediator.ServiceLevel;
+
+public class ServiceLevelModel extends BaseModel {
   private ServiceLevel selectedServiceLevel;
 
   private List<ServiceLevel> serviceLevels = new ArrayList<ServiceLevel>();
@@ -21,5 +21,9 @@ public class ServiceLevelModel extends BaseModel{
 
   public List<ServiceLevel> getServiceLevels() {
     return new ArrayList<>(serviceLevels);
+  }
+
+  public void setServiceLevels(List<ServiceLevel> serviceLevels) {
+    this.serviceLevels = serviceLevels;
   }
 }

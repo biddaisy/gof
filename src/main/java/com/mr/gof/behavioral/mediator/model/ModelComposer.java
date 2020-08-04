@@ -19,7 +19,7 @@ public class ModelComposer {
     serviceLevelModel.setInstrumentResolver(instrumentResolver);
   }
 
-  public OrderingAccountModel getAccountModel() {
+  public OrderingAccountModel getOrderingAccountModel() {
     return orderingAccountModel;
   }
 
@@ -27,7 +27,7 @@ public class ModelComposer {
     return beneficiaryModel;
   }
 
-  public TransferCurrencyModel getCurrencyModel() {
+  public TransferCurrencyModel getTransferCurrencyModel() {
     return transferCurrencyModel;
   }
 

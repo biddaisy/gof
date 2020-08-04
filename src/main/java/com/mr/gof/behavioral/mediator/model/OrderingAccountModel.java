@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mr.gof.behavioral.mediator.Account;
+import com.mr.gof.behavioral.mediator.Accounts;
 
 public class OrderingAccountModel extends BaseModel {
 
   private Account selectedAccount;
 
-  private final List<Account> accounts = new ArrayList<Account>();
+  private final List<Account> accounts = Accounts.INSTANCE.getAccountList();
 
   public Account getSelectedAccount() {
     return selectedAccount;

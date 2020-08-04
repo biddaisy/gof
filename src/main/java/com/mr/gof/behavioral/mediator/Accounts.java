@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Accounts {
 
-  public static final Accounts ACCOUNTS = new Accounts();
+  public static final Accounts INSTANCE = new Accounts();
 
   private Accounts() {
   }
