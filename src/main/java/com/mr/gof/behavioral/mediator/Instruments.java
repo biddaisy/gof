@@ -16,9 +16,9 @@ public class Instruments {
   {
     instrumentList = new ArrayList<>();
 
-    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
-    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Collections.singletonList(BYN), BELARUS, URGENT));
-    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Collections.singletonList(ZAR), SOUTH_AFRICA, ULTIMATE));
+    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Arrays.asList(USD, EUR, BYN), BELARUS, NORMAL));
+    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Collections.singletonList(USD), USA, URGENT));
+    instrumentList.add(new Instrument(FIRST_NATIONAL_BANK, Arrays.asList(USD, ZAR), SOUTH_AFRICA, ULTIMATE));
 
     instrumentList.add(new Instrument(NON_STANDARD_BANK, Arrays.asList(USD, EUR, ZAR, BYN), USA, NORMAL));
     instrumentList.add(new Instrument(NON_STANDARD_BANK, Collections.singletonList(BYN), BELARUS, URGENT));

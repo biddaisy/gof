@@ -2,6 +2,7 @@ package com.mr.gof.behavioral.mediator;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.mr.gof.behavioral.mediator.model.*;
 
@@ -33,6 +34,22 @@ public class InstrumentResolver {
         }
   }
 
+  public List<Instrument> getSelectedInstruments() {
+    Account orderingAccount = modelComposer.getOrderingAccountModel().getSelectedAccount();
+    Currency transferCurrency = modelComposer.getTransferCurrencyModel().getSelectedCurrency();
+    Beneficiary beneficiary = modelComposer.getBeneficiaryModel().getSelectedBeneficiary();
+    ServiceLevel serviceLevel = modelComposer.getServiceLevelModel().getSelectedServiceLevel();
+    if (orderingAccount == null || transferCurrency == null || beneficiary == null || serviceLevel == null) {
+      return Collections.emptyList();
+    }
+    else {
+      return instruments.getInstrumentList().stream()
+          .filter(i -> i.getBank() == orderingAccount.getBank() && i.getTransferCurrencies().contains(transferCurrency)
+              && i.getBeneficiaryCountry() == beneficiary.getCountry() && i.getServiceLevel() == serviceLevel)
+          .collect(Collectors.toList());
+    }
+  }
+
   private void beneficiaryModelChanged(BeneficiaryModel model) {
     Account orderingAccount = modelComposer.getOrderingAccountModel().getSelectedAccount();
     Currency transferCurrency = modelComposer.getTransferCurrencyModel().getSelectedCurrency();
@@ -41,7 +58,7 @@ public class InstrumentResolver {
         beneficiary != null ? instruments.getServiceLevels(orderingAccount.getBank(), transferCurrency, beneficiary.getCountry()) : Collections.emptyList();
     ServiceLevelModel serviceLevelModel = modelComposer.getServiceLevelModel();
     serviceLevelModel.setServiceLevels(serviceLevels);
-    serviceLevelModel.setSelectedServiceLevel(serviceLevels.size() == 1? serviceLevels.get(0): null);
+    serviceLevelModel.setSelectedServiceLevel(serviceLevels.size() == 1 ? serviceLevels.get(0) : null);
   }
 
   private void currencyModelChanged(TransferCurrencyModel model) {

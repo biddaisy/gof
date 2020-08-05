@@ -16,4 +16,8 @@ public class Beneficiary {
   public Country getCountry() {
     return country;
   }
+
+  @Override public String toString() {
+    return "Beneficiary{" + "name='" + name + '\'' + ", country=" + country + '}';
+  }
 }

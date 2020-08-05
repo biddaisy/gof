@@ -35,4 +35,8 @@ public class Beneficiaries {
   public List<Beneficiary> getBeneficiaryListByCountries(List<Country> countries) {
     return beneficiaryList.stream().filter(b -> countries.contains(b.getCountry())).collect(Collectors.toList());
   }
+
+  public List<Beneficiary> getBeneficiaryListByCountry(Country country) {
+    return beneficiaryList.stream().filter(b -> country == b.getCountry()).collect(Collectors.toList());
+  }
 }

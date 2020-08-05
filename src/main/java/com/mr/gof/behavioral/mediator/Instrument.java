@@ -34,4 +34,10 @@ public class Instrument {
   public ServiceLevel getServiceLevel() {
     return serviceLevel;
   }
+
+  @Override
+  public String toString() {
+    return "Instrument{" + "bank=" + bank + ", transferCurrencies=" + transferCurrencies + ", beneficiaryCountry=" + beneficiaryCountry + ", serviceLevel="
+        + serviceLevel + '}';
+  }
 }
