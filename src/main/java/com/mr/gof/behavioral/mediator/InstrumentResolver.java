@@ -26,7 +26,7 @@ public class InstrumentResolver {
     }
     else
       if (model instanceof TransferCurrencyModel) {
-        currencyModelChanged((TransferCurrencyModel) model);
+        transferCurrencyModelChanged((TransferCurrencyModel) model);
       }
       else
         if (model instanceof BeneficiaryModel) {
@@ -53,30 +53,43 @@ public class InstrumentResolver {
   private void beneficiaryModelChanged(BeneficiaryModel model) {
     Account orderingAccount = modelComposer.getOrderingAccountModel().getSelectedAccount();
     Currency transferCurrency = modelComposer.getTransferCurrencyModel().getSelectedCurrency();
-    Beneficiary beneficiary = model.getSelectedBeneficiary();
+    Beneficiary selectedBeneficiary = model.getSelectedBeneficiary();
     List<ServiceLevel> serviceLevels =
-        beneficiary != null ? instruments.getServiceLevels(orderingAccount.getBank(), transferCurrency, beneficiary.getCountry()) : Collections.emptyList();
+        selectedBeneficiary != null ? instruments.getServiceLevels(orderingAccount.getBank(), transferCurrency, selectedBeneficiary.getCountry()) : Collections.emptyList();
     ServiceLevelModel serviceLevelModel = modelComposer.getServiceLevelModel();
+    serviceLevelModel.setDisabled(false);
     serviceLevelModel.setServiceLevels(serviceLevels);
     serviceLevelModel.setSelectedServiceLevel(serviceLevels.size() == 1 ? serviceLevels.get(0) : null);
+    if (selectedBeneficiary == null){
+      serviceLevelModel.setDisabled(true);
+    }
+
   }
 
-  private void currencyModelChanged(TransferCurrencyModel model) {
-    Currency transferCurrency = model.getSelectedCurrency();
+  private void transferCurrencyModelChanged(TransferCurrencyModel model) {
+    Currency selectedCurrency = model.getSelectedCurrency();
     Account orderingAccount = modelComposer.getOrderingAccountModel().getSelectedAccount();
     List<Country> beneficiaryCountries =
-        transferCurrency != null ? instruments.getBeneficiaryCountries(orderingAccount.getBank(), transferCurrency) : Collections.emptyList();
+        selectedCurrency != null ? instruments.getBeneficiaryCountries(orderingAccount.getBank(), selectedCurrency) : Collections.emptyList();
     List<Beneficiary> beneficiaries = Beneficiaries.INSTANCE.getBeneficiaryListByCountries(beneficiaryCountries);
     BeneficiaryModel beneficiaryModel = modelComposer.getBeneficiaryModel();
+    beneficiaryModel.setDisabled(false);
     beneficiaryModel.setBeneficiaries(beneficiaries);
     beneficiaryModel.setSelectedBeneficiary(beneficiaries.size() == 1 ? beneficiaries.get(0) : null);
+    if (selectedCurrency == null) {
+      beneficiaryModel.setDisabled(true);
+    }
   }
 
   private void accountModelChanged(OrderingAccountModel model) {
     Account currentAccount = model.getSelectedAccount();
     List<Currency> transferCurrencies = currentAccount != null ? instruments.getTransferCurrencies(currentAccount.getBank()) : Collections.emptyList();
     TransferCurrencyModel transferCurrencyModel = modelComposer.getTransferCurrencyModel();
+    transferCurrencyModel.setDisabled(false);
     transferCurrencyModel.setCurrencies(transferCurrencies);
     transferCurrencyModel.setSelectedCurrency(transferCurrencies.size() == 1 ? transferCurrencies.get(0) : null);
+    if (currentAccount == null) {
+      transferCurrencyModel.setDisabled(true);
+    }
   }
 }

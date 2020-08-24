@@ -12,6 +12,10 @@ public class OrderingAccountModel extends BaseModel {
 
   private final List<Account> accounts = Accounts.INSTANCE.getAccountList();
 
+  public OrderingAccountModel() {
+    setDisabled(false);
+  }
+
   public Account getSelectedAccount() {
     return selectedAccount;
   }
