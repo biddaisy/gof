@@ -1,8 +1,11 @@
 package com.mr.gof.behavioral.iterator;
 
-public interface Iterator {
-  Object first();
-  Object next();
+public interface Iterator<T> {
+  void first();
+
+  void next();
+
   boolean isDone();
-  Object currentObject();
+
+  T currentItem();
 }
