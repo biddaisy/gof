@@ -2,7 +2,7 @@ package com.mr.gof.behavioral.iterator;
 
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book>{
 
   private final String title;
 
@@ -15,7 +15,7 @@ public class Book {
   }
 
   public void print() {
-    System.out.print("employee '" + title + "'");
+    System.out.println("book '" + title + "'");
   }
 
   @Override
@@ -31,5 +31,10 @@ public class Book {
   @Override
   public int hashCode() {
     return Objects.hash(title);
+  }
+
+  @Override
+  public int compareTo(Book book) {
+    return title.compareTo(book.title);
   }
 }

@@ -7,8 +7,8 @@ public class Library<T> {
 
   private final List<T> list;
 
-  public Library(List<T> list) {
-    this.list = new ArrayList<>(list);
+  public Library() {
+    this.list = new ArrayList<>();
   }
 
   public long count() {
@@ -18,4 +18,9 @@ public class Library<T> {
   public T get(int index) {
     return list.get(index);
   }
+
+  public void add(T e){
+    list.add(e);
+  }
+
 }
