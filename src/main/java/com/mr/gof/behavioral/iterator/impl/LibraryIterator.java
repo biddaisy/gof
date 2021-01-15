@@ -1,16 +1,16 @@
 package com.mr.gof.behavioral.iterator.impl;
 
-import com.mr.gof.behavioral.iterator.Catalog;
+import com.mr.gof.behavioral.iterator.Library;
 import com.mr.gof.behavioral.iterator.Iterator;
 
-public class CatalogIterator<T> implements Iterator<T> {
+public class LibraryIterator<T> implements Iterator<T> {
 
-  private final Catalog<T> catalog;
+  private final Library<T> library;
 
   private int currentIndex;
 
-  public CatalogIterator(Catalog<T> catalog) {
-    this.catalog = catalog;
+  public LibraryIterator(Library<T> library) {
+    this.library = library;
   }
 
   @Override
@@ -25,7 +25,7 @@ public class CatalogIterator<T> implements Iterator<T> {
 
   @Override
   public boolean isDone() {
-    return currentIndex >= catalog.count();
+    return currentIndex >= library.count();
   }
 
   @Override
@@ -33,6 +33,6 @@ public class CatalogIterator<T> implements Iterator<T> {
     if (isDone()) {
       throw new IndexOutOfBoundsException();
     }
-    return catalog.get(currentIndex);
+    return library.get(currentIndex);
   }
 }

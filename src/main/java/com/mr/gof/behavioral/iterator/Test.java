@@ -1,7 +1,6 @@
 package com.mr.gof.behavioral.iterator;
 
-import com.mr.gof.behavioral.iterator.impl.BookCatalog;
-import com.mr.gof.behavioral.iterator.impl.CatalogIterator;
+import com.mr.gof.behavioral.iterator.impl.LibraryIterator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +14,9 @@ public class Test {
     books.add(new Book("Book 3"));
     books.add(new Book("Book 4"));
     books.add(new Book("Book 5"));
-    BookCatalog bookCatalog = new BookCatalog(books);
-    CatalogIterator<Book> bookCatalogIterator = new CatalogIterator<>(bookCatalog);
-    printBooks(bookCatalogIterator);
+    Library<Book> library = new Library<>(books);
+    LibraryIterator<Book> bookLibraryIterator = new LibraryIterator<>(library);
+    printBooks(bookLibraryIterator);
   }
 
   public static void printBooks(Iterator<Book> bookIterator) {
