@@ -1,7 +1,8 @@
 package com.mr.gof.behavioral.iterator;
 
-import com.mr.gof.behavioral.iterator.impl.CatalogIterator;
-import com.mr.gof.behavioral.iterator.impl.LibraryIterator;
+import com.mr.gof.behavioral.iterator.impl.Book;
+import com.mr.gof.behavioral.iterator.impl.Catalog;
+import com.mr.gof.behavioral.iterator.impl.Library;
 
 public class Test {
 
@@ -14,11 +15,11 @@ public class Test {
     library.add(new Book("Book 1"));
     library.add(new Book("Book 5"));
     library.add(new Book("Book 1"));
-    LibraryIterator<Book> libraryIterator = new LibraryIterator<>(library);
+    Iterator<Book> libraryIterator = library.createIterator();
     System.out.println("Library:");
     printBooks(libraryIterator);
     Catalog<Book> catalog = createCatalog(library);
-    CatalogIterator<Book> catalogIterator = new CatalogIterator<>(catalog);
+    Iterator<Book> catalogIterator = catalog.createIterator();
     System.out.println("Catalog:");
     printBooks(catalogIterator);
   }
@@ -31,7 +32,7 @@ public class Test {
 
   public static Catalog<Book> createCatalog(Library<Book> library) {
     Catalog<Book> catalog = new Catalog<>();
-    LibraryIterator<Book> bookLibraryIterator = new LibraryIterator<>(library);
+    Iterator<Book> bookLibraryIterator = library.createIterator();
     for (bookLibraryIterator.first(); !bookLibraryIterator.isDone(); bookLibraryIterator.next()) {
       catalog.add(bookLibraryIterator.currentItem());
     }

@@ -1,9 +1,8 @@
 package com.mr.gof.behavioral.iterator.impl;
 
-import com.mr.gof.behavioral.iterator.Library;
 import com.mr.gof.behavioral.iterator.Iterator;
 
-public class LibraryIterator<T> implements Iterator<T> {
+class LibraryIterator<T> implements Iterator<T> {
 
   private final Library<T> library;
 

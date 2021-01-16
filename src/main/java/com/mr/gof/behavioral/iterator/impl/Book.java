@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.iterator;
+package com.mr.gof.behavioral.iterator.impl;
 
 import java.util.Objects;
 
