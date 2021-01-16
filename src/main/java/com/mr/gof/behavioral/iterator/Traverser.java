@@ -1,7 +1,7 @@
 package com.mr.gof.behavioral.iterator;
 
 public abstract class Traverser<T> {
-  private Iterator<T> iterator;
+  private final Iterator<T> iterator;
 
   protected Traverser(Storage<T> storage) {
     this.iterator = storage.createIterator();
