@@ -3,6 +3,7 @@ package com.mr.gof.behavioral.iterator;
 import com.mr.gof.behavioral.iterator.impl.Book;
 import com.mr.gof.behavioral.iterator.impl.Catalog;
 import com.mr.gof.behavioral.iterator.impl.Library;
+import com.mr.gof.behavioral.iterator.impl.PrintNBooks;
 
 public class Test {
 
@@ -22,6 +23,13 @@ public class Test {
     Iterator<Book> catalogIterator = catalog.createIterator();
     System.out.println("Catalog:");
     printBooks(catalogIterator);
+    System.out.println("Traverse library:");
+    boolean traversedAll = new PrintNBooks(library, 8).traverse();
+    System.out.println("Traversed all " + traversedAll);
+    System.out.println("Traverse catalog:");
+    traversedAll = new PrintNBooks(catalog, 2).traverse();
+    System.out.println("Traversed all " + traversedAll);
+
   }
 
   public static void printBooks(Iterator<Book> bookIterator) {
