@@ -20,22 +20,28 @@ public class Test {
         context.assign(y, true);
 
         boolean result = expression.evaluate(context);
-        System.out.println(result);
+
+        System.out.println("values: " + context.string());
+        System.out.println("on expression: " + expression.string());
+        System.out.println("result: " + result);
 
         // x and y
         expression = new AndExp(x, y);
         result = expression.evaluate(context);
-        System.out.println(result);
+        System.out.println("on expression: " + expression.string());
+        System.out.println("result: " + result);
 
         // x or y
         expression = new OrExp(x, y);
         result = expression.evaluate(context);
-        System.out.println(result);
+        System.out.println("on expression: " + expression.string());
+        System.out.println("result: " + result);
 
         // not x
         expression = new NotExp(x);
         result = expression.evaluate(context);
-        System.out.println(result);
+        System.out.println("on expression: " + expression.string());
+        System.out.println("result: " + result);
     }
 
 }

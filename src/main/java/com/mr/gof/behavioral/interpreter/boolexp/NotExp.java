@@ -22,4 +22,9 @@ public class NotExp implements BooleanExp {
   public BooleanExp copy() {
     return new NotExp(operand.copy());
   }
+
+  @Override
+  public String string() {
+    return "not " + operand.string();
+  }
 }

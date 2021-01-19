@@ -25,4 +25,9 @@ public class OrExp implements BooleanExp {
     public BooleanExp copy() {
         return new OrExp(operand1.copy(), operand2.copy());
     }
+
+    @Override
+    public String string() {
+        return "( " + operand1.string() + " or " + operand2.string() + " )";
+    }
 }

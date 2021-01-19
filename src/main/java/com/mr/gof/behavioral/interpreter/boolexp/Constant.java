@@ -22,4 +22,9 @@ public class Constant implements BooleanExp {
   public BooleanExp copy() {
     return new Constant(value);
   }
+
+  @Override
+  public String string() {
+    return String.valueOf(value);
+  }
 }

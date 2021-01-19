@@ -25,4 +25,9 @@ public class AndExp implements BooleanExp {
   public BooleanExp copy() {
     return new AndExp(operand1.copy(), operand2.copy());
   }
+
+  @Override
+  public String string() {
+    return operand1.string() + " and " + operand2.string();
+  }
 }

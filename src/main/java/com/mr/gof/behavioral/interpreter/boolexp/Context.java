@@ -15,4 +15,9 @@ public class Context {
   public void assign(VariableExp variableExp, boolean value) {
     values.put(variableExp, value);
   }
+
+  public String string() {
+    return values.entrySet().stream()
+        .reduce(new StringBuilder(), (sb, e2) -> sb.append(" ").append(e2.getKey().string()).append("=").append(e2.getValue()), (sb1, sb2) -> sb1).toString();
+  }
 }

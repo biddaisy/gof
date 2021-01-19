@@ -31,4 +31,9 @@ public class VariableExp implements BooleanExp {
   public BooleanExp copy() {
     return new VariableExp(name);
   }
+
+  @Override
+  public String string() {
+    return name;
+  }
 }
