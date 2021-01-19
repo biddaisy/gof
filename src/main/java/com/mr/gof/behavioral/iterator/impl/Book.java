@@ -1,21 +1,28 @@
-package com.mr.gof.behavioral.iterator;
+package com.mr.gof.behavioral.iterator.impl;
 
 import java.util.Objects;
 
-public class Book implements Comparable<Book>{
+public class Book implements Comparable<Book> {
 
   private final String title;
 
-  public Book(String title) {
+  private final String author;
+
+  public Book(String title, String author) {
     this.title = title;
+    this.author = author;
   }
 
   public String getTitle() {
     return title;
   }
 
+  public String getAuthor() {
+    return author;
+  }
+
   public void print() {
-    System.out.println("book '" + title + "'");
+    System.out.println("book '" + title + "' author " + author);
   }
 
   @Override
