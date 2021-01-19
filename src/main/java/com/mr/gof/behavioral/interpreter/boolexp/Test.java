@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.interpreter;
+package com.mr.gof.behavioral.interpreter.boolexp;
 
 public class Test {
 
