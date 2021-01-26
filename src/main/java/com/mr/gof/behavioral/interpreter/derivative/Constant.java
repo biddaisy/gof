@@ -6,8 +6,6 @@ public class Constant implements Function {
 
   private final BigDecimal number;
 
-  private final Function derivative = new Constant(BigDecimal.ZERO);
-
   public Constant(BigDecimal number) {
     this.number = number;
   }
@@ -19,7 +17,7 @@ public class Constant implements Function {
 
   @Override
   public BigDecimal evaluateDerivative(Context context) {
-    return derivative.evaluate(context);
+    return BigDecimal.ZERO;
   }
 
   @Override
@@ -29,7 +27,7 @@ public class Constant implements Function {
 
   @Override
   public String getDerivativeAsFormula(Context context) {
-    return derivative.getFunctionAsFormula(context);
+    return BigDecimal.ZERO.toPlainString();
   }
 
 }

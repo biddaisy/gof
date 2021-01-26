@@ -13,7 +13,7 @@ public class Variable implements Function{
 
     @Override
     public BigDecimal evaluateDerivative(Context context) {
-        return derivative.evaluateDerivative(context);
+        return derivative.evaluate(context);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class FunctionDivision implements Function {
     BigDecimal z1 = function1.evaluateDerivative(context).multiply(function2.evaluate(context));
     BigDecimal z2 = function1.evaluate(context).multiply(function2.evaluateDerivative(context));
     BigDecimal y1 = z1.add(z2);
-    BigDecimal y2 = BigDecimal.valueOf(Math.sqrt(function2.evaluate(context).doubleValue()));
+    BigDecimal y2 = BigDecimal.valueOf(Math.pow(function2.evaluate(context).doubleValue(), 2));
     return y1.divide(y2, context.getMathContext());
   }
 
