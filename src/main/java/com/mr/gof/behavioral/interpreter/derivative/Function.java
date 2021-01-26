@@ -1,9 +1,15 @@
 package com.mr.gof.behavioral.interpreter.derivative;
 
+import java.math.BigDecimal;
+
 public interface Function {
 
-  String getFunction(String operand);
+  BigDecimal evaluate(Context context);
 
-  String getDerivative(String operand);
+  BigDecimal evaluateDerivative(Context context);
+
+  String getFunctionAsFormula(Context context);
+
+  String getDerivativeAsFormula(Context context);
 
 }

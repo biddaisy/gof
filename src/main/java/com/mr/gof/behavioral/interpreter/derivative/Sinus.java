@@ -1,13 +1,25 @@
 package com.mr.gof.behavioral.interpreter.derivative;
 
+import java.math.BigDecimal;
+
 public class Sinus implements Function {
   @Override
-  public String getFunction(String operand) {
-    return "sin(" + operand + ")";
+  public BigDecimal evaluate(Context context) {
+    return new BigDecimal(Math.sin(context.getValue().doubleValue()), context.getMathContext());
   }
 
   @Override
-  public String getDerivative(String operand) {
-    return "cos(" + operand + ")";
+  public BigDecimal evaluateDerivative(Context context) {
+    return new Cosinus().evaluate(context);
+  }
+
+  @Override
+  public String getFunctionAsFormula(Context context) {
+    return "sin(" + context.getName() + ")";
+  }
+
+  @Override
+  public String getDerivativeAsFormula(Context context) {
+    return "cos(" + context.getName() + ")";
   }
 }

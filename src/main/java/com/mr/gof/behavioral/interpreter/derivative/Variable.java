@@ -7,13 +7,23 @@ public class Variable implements Function{
     private final Function derivative = new Constant(BigDecimal.ONE);
 
     @Override
-    public String getFunction(String operand) {
-        return "x";
+    public BigDecimal evaluate(Context context) {
+        return context.getValue();
     }
 
     @Override
-    public String getDerivative(String operand) {
-        return derivative.getFunction(operand);
+    public BigDecimal evaluateDerivative(Context context) {
+        return derivative.evaluateDerivative(context);
+    }
+
+    @Override
+    public String getFunctionAsFormula(Context context) {
+        return context.getName();
+    }
+
+    @Override
+    public String getDerivativeAsFormula(Context context) {
+        return derivative.getFunctionAsFormula(context);
     }
 
 }

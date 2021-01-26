@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.interpreter.derivative;
 
+import java.math.BigDecimal;
+
 public class FunctionMultiplication implements Function {
   private final Function function1;
 
@@ -11,24 +13,47 @@ public class FunctionMultiplication implements Function {
   }
 
   @Override
-  public String getFunction(String operand) {
-    return function1.getFunction(operand) + function2.getFunction(operand);
+  public BigDecimal evaluate(Context context) {
+    return function1.evaluate(context).multiply(function2.evaluate(context), context.getMathContext());
   }
 
   @Override
-  public String getDerivative(String operand) {
+  public BigDecimal evaluateDerivative(Context context) {
     if (function1 instanceof Constant)
-      return getDerivativeFromConstantAndFunction(operand);
+      return evaluateDerivativeFromConstantAndFunction(context);
     else
-      return getDerivativeFromFunctions(operand);
+      return evaluateDerivativeFromFunctions(context);
   }
 
-  private String getDerivativeFromConstantAndFunction(String operand) {
-    return function1.getFunction(operand) + "*" + function2.getDerivative(operand);
+  @Override
+  public String getFunctionAsFormula(Context context) {
+    return function1.getFunctionAsFormula(context) + "*" + function2.getFunctionAsFormula(context);
   }
 
-  private String getDerivativeFromFunctions(String operand) {
-    return "(" + function1.getDerivative(operand) + "*" + function2.getFunction(operand) + " + " + function1.getFunction(operand) + "*"
-        + function2.getDerivative(operand) + ")";
+  @Override
+  public String getDerivativeAsFormula(Context context) {
+    if (function1 instanceof Constant)
+      return getDerivativeFromConstantAndFunction(context);
+    else
+      return getDerivativeFromFunctions(context);
+  }
+
+  private BigDecimal evaluateDerivativeFromConstantAndFunction(Context context) {
+    return function1.evaluate(context).multiply(function2.evaluateDerivative(context), context.getMathContext());
+  }
+
+  private BigDecimal evaluateDerivativeFromFunctions(Context context) {
+    BigDecimal y1 = function1.evaluateDerivative(context).multiply(function2.evaluate(context));
+    BigDecimal y2 = function1.evaluate(context).multiply(function2.evaluateDerivative(context));
+    return y1.add(y2, context.getMathContext());
+  }
+
+  private String getDerivativeFromConstantAndFunction(Context context) {
+    return function1.getFunctionAsFormula(context) + "*" + function2.getDerivativeAsFormula(context);
+  }
+
+  private String getDerivativeFromFunctions(Context context) {
+    return "(" + function1.getDerivativeAsFormula(context) + "*" + function2.getFunctionAsFormula(context) + " + " + function1.getFunctionAsFormula(context) + "*"
+        + function2.getDerivativeAsFormula(context) + ")";
   }
 }
