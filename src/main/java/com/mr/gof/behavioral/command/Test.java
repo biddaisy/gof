@@ -6,14 +6,27 @@ public class Test {
     Application application = new Application();
     Document document1 = new Document("Test doc 1", "Test text 1");
     Document document2 = new Document("Test doc 2", "Test text 2");
-    MenuItem openDocumentMenuItem = new MenuItem(new OpenCommand(application, document1));
-    MenuItem copyDocumentMenuItem = new MenuItem(new CopyCommand(application, document2));
-    MenuItem pasteDocumentMenuItem = new MenuItem(new PasteCommand(application));
-    MenuItem displayDocument = new MenuItem(new SimpleCommand(() -> System.out.println(application.getDocument().getText())));
+    OpenCommand openCommand = new OpenCommand(application, document1);
+    CopyCommand copyCommand = new CopyCommand(application, document2);
+    PasteCommand pasteCommand = new PasteCommand(application);
+    SimpleCommand simpleCommand = new SimpleCommand(() -> System.out.println(application.getDocument().getText()));
+
+    MenuItem openDocumentMenuItem = new MenuItem(openCommand);
+    MenuItem copyDocumentMenuItem = new MenuItem(copyCommand);
+    MenuItem pasteDocumentMenuItem = new MenuItem(pasteCommand);
+    MenuItem displayDocument = new MenuItem(simpleCommand);
 
     openDocumentMenuItem.click();
     copyDocumentMenuItem.click();
     pasteDocumentMenuItem.click();
     displayDocument.click();
+
+    document2.setText("new test text 2");
+
+    System.out.println("Macro command:");
+    MacroCommand macroCommand = new MacroCommand();
+    macroCommand.addCommand(openCommand, copyCommand, pasteCommand, simpleCommand);
+    MenuItem copyAndPasteDocument = new MenuItem(macroCommand);
+    copyAndPasteDocument.click();
   }
 }
