@@ -1,11 +1,9 @@
 package com.mr.gof.structural.adapter.pluggable;
 
-import java.util.function.IntConsumer;
-
 //Adapter
 public class Adapter extends Beverage {
 
-  private final IntConsumer beverageMaker;
+  private final BeverageMaker beverageMaker;
 
   public Adapter(CoffeeMaker coffeeMaker) {
     beverageMaker = q -> coffeeMaker.brew(q, 90);
@@ -17,6 +15,11 @@ public class Adapter extends Beverage {
 
   @Override
   public void getBeverage(int quantityMilliliter) {
-    beverageMaker.accept(quantityMilliliter);
+    beverageMaker.make(quantityMilliliter);
   }
+}
+
+@FunctionalInterface
+interface BeverageMaker {
+  void make(int quantityMilliliter);
 }
