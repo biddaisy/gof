@@ -1,58 +1,33 @@
 package com.mr.gof.structural.adapter.twoway;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
-public class IntSetRange implements IntSet, IntRange{
+//class adapter
+public class IntSetRange extends IntSetImpl implements IntRange {
 
-    private final IntRange intRange;
+  @Override
+  public void unionWith(IntRange other) {
+    other.asList().forEach(this::add);
+  }
 
-    public IntSetRange() {
-        this.intRange = new IntRangeImpl();
+  @Override
+  public void differenceFrom(IntRange other) {
+    other.asList().forEach(this::remove);
+  }
+
+  @Override
+  public boolean isSupersetOf(IntRange other) {
+    for (int z : other.asList()) {
+      if (!member(z))
+        return false;
     }
+    return true;
+  }
 
-    public IntSetRange(IntRange intRange) {
-        this.intRange = Objects.requireNonNull(intRange);
-    }
-
-    @Override
-    public void unionWith(IntRange other) {
-        this.intRange.unionWith(other);
-    }
-
-    @Override
-    public void differenceFrom(IntRange other) {
-        this.intRange.differenceFrom(other);
-    }
-
-    @Override
-    public boolean isSupersetOf(IntRange other) {
-        return this.intRange.isSupersetOf(other);
-    }
-
-    @Override
-    public List<Integer> asList() {
-        return this.intRange.asList();
-    }
-
-    @Override
-    public void add(int value) {
-        this.intRange.unionWith(IntRangeImpl.singleton(value));
-    }
-
-    @Override
-    public void remove(int value) {
-        this.differenceFrom(IntRangeImpl.singleton(value));
-    }
-
-    @Override
-    public boolean member(int value) {
-        return this.isSupersetOf(IntRangeImpl.singleton(value));
-    }
-
-    @Override
-    public Iterator<Integer> iterator() {
-        return this.asList().iterator();
-    }
+  @Override
+  public List<Integer> asList() {
+      return StreamSupport.stream(spliterator(), false).collect(Collectors.toList());
+  }
 }
