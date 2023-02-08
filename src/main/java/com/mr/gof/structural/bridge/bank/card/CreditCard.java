@@ -1,0 +1,29 @@
+package com.mr.gof.structural.bridge.bank.card;
+
+import com.mr.gof.structural.bridge.bank.account.Account;
+import com.mr.gof.structural.bridge.bank.Currency;
+import com.mr.gof.structural.bridge.bank.Person;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+public class CreditCard extends BasicCard {
+
+    private final BigDecimal limit;
+
+    public CreditCard(String number, Person owner, PaymentSystem paymentSystem, LocalDate validThru, Currency cardCurrency, Account account, BigDecimal limit) {
+        super(number, owner, paymentSystem, validThru, cardCurrency, account);
+        this.limit = limit;
+    }
+
+    @Override
+    public void withdraw(BigDecimal amount, Currency currency) {
+        var exchangedAmount = exchange(amount, currency);
+        var currentBalance = account.getCurrentBalance();
+        var updatedBalance = currentBalance.subtract(exchangedAmount);
+        if (limit.subtract(updatedBalance.negate()).signum() == -1){
+            throw new IllegalArgumentException("Not enough limit");
+        }
+        super.withdraw(exchangedAmount, account.getBaseCurrency());
+    }
+}
