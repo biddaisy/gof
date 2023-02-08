@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Editor {
 
-  private Document document = new Document();
+  private final Document document = new Document();
 
-  private List<Object> documentHistory = new ArrayList<Object>();
+  private final List<Object> documentHistory = new ArrayList<>();
 
   private int documentIndex;
 

@@ -20,7 +20,7 @@ public class Document {
     this.content = ((Memento) object).content;
   }
 
-  private class Memento {
+  private static class Memento {
     private final String content;
 
     public Memento(String content) {
