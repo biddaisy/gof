@@ -16,11 +16,17 @@ public class SavingAccount extends CurrentAccount {
 
   @Override
   public void transfer(BigDecimal amount) {
-    var updatedWithdrawalLimit = withdrawalLimit.subtract(amount);
-    if (updatedWithdrawalLimit.signum() == -1) {
-      throw new IllegalArgumentException("Limit exceeded");
+    if (amount.signum() == -1) {
+      var updatedWithdrawalLimit = withdrawalLimit.subtract(amount.negate());
+      if (updatedWithdrawalLimit.signum() == -1) {
+        throw new IllegalArgumentException("Limit exceeded");
+      }
+      withdrawalLimit = updatedWithdrawalLimit;
     }
-    withdrawalLimit = updatedWithdrawalLimit;
     super.transfer(amount);
+  }
+
+  public BigDecimal getWithdrawalLimit() {
+    return withdrawalLimit;
   }
 }

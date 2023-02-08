@@ -12,6 +12,7 @@ public interface Account {
   String getNumber();
 
   Person getOwner();
+
   Currency getBaseCurrency();
 
   BigDecimal getCurrentBalance();

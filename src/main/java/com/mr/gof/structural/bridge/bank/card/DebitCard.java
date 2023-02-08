@@ -9,8 +9,8 @@ import java.time.LocalDate;
 
 public class DebitCard extends BasicCard {
 
-    public DebitCard(String number, Person owner, PaymentSystem paymentSystem, LocalDate validThru, Currency cardCurrency, Account account) {
-        super(number, owner, paymentSystem, validThru, cardCurrency, account);
+    public DebitCard(String number, Person owner, PaymentSystem paymentSystem, LocalDate validThru, Account account) {
+        super(number, owner, paymentSystem, validThru, account);
     }
 
     @Override

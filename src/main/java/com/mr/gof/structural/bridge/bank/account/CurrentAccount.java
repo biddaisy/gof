@@ -9,72 +9,70 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class CurrentAccount implements Account{
+public class CurrentAccount implements Account {
 
-    private final String number;
+  private final String number;
 
-    private final Person owner;
+  private final Person owner;
 
-    private final Currency baseCurrency;
+  private final Currency baseCurrency;
 
-    private BigDecimal currentBalance;
+  private BigDecimal currentBalance;
 
-    private final List<Card> cards = new ArrayList<>();
+  private final List<Card> cards = new ArrayList<>();
 
-    public CurrentAccount(String number, Person owner, Currency baseCurrency, BigDecimal currentBalance) {
-        this.number = number;
-        this.owner = owner;
-        this.baseCurrency = baseCurrency;
-        this.currentBalance = currentBalance;
-    }
+  public CurrentAccount(String number, Person owner, Currency baseCurrency, BigDecimal currentBalance) {
+    this.number = number;
+    this.owner = owner;
+    this.baseCurrency = baseCurrency;
+    this.currentBalance = currentBalance;
+  }
 
-    @Override
-    public String getNumber() {
-        return number;
-    }
+  @Override
+  public String getNumber() {
+    return number;
+  }
 
-    @Override
-    public Person getOwner() {
-        return owner;
-    }
+  @Override
+  public Person getOwner() {
+    return owner;
+  }
 
-    @Override
-    public Currency getBaseCurrency() {
-        return baseCurrency;
-    }
+  @Override
+  public Currency getBaseCurrency() {
+    return baseCurrency;
+  }
 
-    @Override
-    public BigDecimal getCurrentBalance() {
-        return null;
-    }
+  @Override
+  public BigDecimal getCurrentBalance() {
+    return currentBalance;
+  }
 
-    @Override
-    public void transfer(BigDecimal amount) {
-        var updatedBalance = currentBalance.add(amount);
-        if (updatedBalance.signum() == -1){
-            throw new IllegalArgumentException("Not enough balance");
-        }
-        currentBalance = updatedBalance;
-    }
+  @Override
+  public void transfer(BigDecimal amount) {
+    currentBalance = currentBalance.add(amount);
+  }
 
-    @Override
-    public List<Card> getCards() {
-        return List.copyOf(cards);
-    }
+  @Override
+  public List<Card> getCards() {
+    return List.copyOf(cards);
+  }
 
-    public void addCard(Card card){
-        cards.add(card);
-    }
+  public void addCard(Card card) {
+    cards.add(card);
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CurrentAccount that)) return false;
-        return getNumber().equals(that.getNumber());
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (!(o instanceof CurrentAccount that))
+      return false;
+    return getNumber().equals(that.getNumber());
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNumber());
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(getNumber());
+  }
 }

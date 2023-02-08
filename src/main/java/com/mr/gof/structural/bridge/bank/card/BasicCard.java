@@ -19,18 +19,15 @@ public class BasicCard implements Card {
 
   private final LocalDate validThru;
 
-  private final Currency cardCurrency;
-
   private CardStatus cardStatus;
 
   protected final Account account;
 
-  public BasicCard(String number, Person owner, PaymentSystem paymentSystem, LocalDate validThru, Currency cardCurrency, Account account) {
+  public BasicCard(String number, Person owner, PaymentSystem paymentSystem, LocalDate validThru, Account account) {
     this.number = number;
     this.owner = owner;
     this.paymentSystem = paymentSystem;
     this.validThru = validThru;
-    this.cardCurrency = cardCurrency;
     this.account = account;
     this.cardStatus = CardStatus.ACTIVE;
   }
@@ -58,7 +55,11 @@ public class BasicCard implements Card {
   @Override
   public void withdraw(BigDecimal amount, Currency currency) {
     if (cardStatus != CardStatus.ACTIVE){
-      throw new IllegalStateException("card not active");
+      throw new IllegalStateException("Card not active");
+    }
+    var now = LocalDate.now();
+    if (now.isAfter(validThru)) {
+      throw new IllegalStateException("Card expired");
     }
     var exchangedAmount = exchange(amount, currency);
     account.transfer(exchangedAmount.negate());
@@ -91,7 +92,7 @@ public class BasicCard implements Card {
 
   @Override
   public Currency getCardCurrency() {
-    return cardCurrency;
+    return account.getBaseCurrency();
   }
 
   @Override
