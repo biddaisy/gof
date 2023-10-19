@@ -1,12 +1,11 @@
 package com.mr.gof.behavioral.mediator.model;
 
-import com.mr.gof.behavioral.mediator.Currency;
-import com.mr.gof.behavioral.mediator.InstrumentResolver;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.mr.gof.behavioral.mediator.Currency;
 
 public class TransferCurrencyModel extends BaseModel{
   private Currency selectedCurrency;

@@ -2,6 +2,8 @@ package com.mr.gof.structural.bridge.stack;
 
 import java.util.Random;
 
+import static com.mr.gof.Logger.log;
+
 public class Test {
 
   public static void main(String[] args) {
@@ -17,10 +19,10 @@ public class Test {
     }
     for (Stack stack : stacks) {
       while (!stack.isEmpty()) {
-        System.out.print(stack.pop() + "  ");
+        log(stack.pop() + "  ");
       }
-      System.out.println();
+      log("\n");
     }
-    System.out.println("total rejected is " + ((StackHanoi) stacks[3]).reportRejected());
+    log("total rejected is " + ((StackHanoi) stacks[3]).reportRejected());
   }
 }
