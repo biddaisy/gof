@@ -22,13 +22,13 @@ public class Test {
         var card1 = new DebitCard("D1", person1, VISA, LocalDate.of(2025, 1, 1), currentAccount1);
         bank1.addAccount(currentAccount1);
         bank1.addAtm(new Atm("ATM1"));
-        bank1.getAtms().get(0).withdraw(card1, BigDecimal.valueOf(100), EUR);
+        bank1.getAtms().getFirst().withdraw(card1, BigDecimal.valueOf(100), EUR);
         log("card1 balance = " + card1.getAvailableBalance() + " " + card1.getCardCurrency());
         log("currentAccount1 balance = " + currentAccount1.getCurrentBalance() + " " + currentAccount1.getBaseCurrency());
         var card2 = new CreditCard("C1", person1, MASTERCARD, LocalDate.of(2024, 1, 1), currentAccount1, BigDecimal.valueOf(100));
         var card2AvailableBalance = card2.getAvailableBalance();
         log("card2 available balance " + card2AvailableBalance + " " + card2.getCardCurrency());
-        bank1.getAtms().get(0).withdraw(card2, card2AvailableBalance, USD);
+        bank1.getAtms().getFirst().withdraw(card2, card2AvailableBalance, USD);
         log("currentAccount1 balance = " + currentAccount1.getCurrentBalance() + " " + currentAccount1.getBaseCurrency());
         currentAccount1.transfer(BigDecimal.valueOf(200));
         log("added 200 " +currentAccount1.getBaseCurrency() + ", currentAccount1 balance = " + currentAccount1.getCurrentBalance() + " " + currentAccount1.getBaseCurrency());
