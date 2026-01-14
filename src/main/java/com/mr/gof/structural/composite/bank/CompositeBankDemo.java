@@ -28,7 +28,11 @@ import java.util.List;
  *   <li>Specialized operations at different hierarchy levels</li>
  * </ul>
  */
-public class BankCompositeDemo {
+public class CompositeBankDemo {
+
+    private CompositeBankDemo() {
+    }
+
     /**
      * Main entry point for the Composite Pattern demonstration.
      *
