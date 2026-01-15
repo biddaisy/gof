@@ -156,12 +156,3 @@ It keeps your code:
 - Open for extension, closed for modification
 
 ---
-
-If you want, Mike, I can also generate:
-
-- A **UML diagram image**
-- A **version with interest accrual decorators**
-- A **README badge set**
-- A **full structural patterns folder**
-
-Just say the word.
