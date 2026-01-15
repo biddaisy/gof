@@ -1,5 +1,7 @@
 package com.mr.gof.structural.facade.bank;
 
+import java.math.BigDecimal;
+
 /**
  * Demonstrates a realistic banking workflow using the Facade pattern.
  */
@@ -15,7 +17,7 @@ public class FacadeBankDemo {
         BankFacade bank = new BankFacade();
 
         bank.onboardCustomer(CUST_1001);
-        bank.transferMoney(CUST_1001, "ACC-1", "ACC-2", 500);
+        bank.transferMoney(CUST_1001, "ACC-1", "ACC-2", BigDecimal.valueOf(500));
         bank.applyForLoan(CUST_1001, 20_000);
     }
 }

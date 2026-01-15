@@ -2,6 +2,8 @@ package com.mr.gof.structural.facade.bank;
 
 import com.mr.gof.Logger;
 
+import java.math.BigDecimal;
+
 /**
  * Facade that orchestrates complex banking operations such as:
  * - KYC verification
@@ -45,7 +47,7 @@ public class BankFacade {
     /**
      * Transfers money between accounts with AML and identity checks.
      */
-    public void transferMoney(String customerId, String fromAcc, String toAcc, double amount) {
+    public void transferMoney(String customerId, String fromAcc, String toAcc, BigDecimal amount) {
         Logger.log("=== Transfer Request by {0}: {1} -> {2}, amount: {3} ===",
                 customerId, fromAcc, toAcc, amount);
 
