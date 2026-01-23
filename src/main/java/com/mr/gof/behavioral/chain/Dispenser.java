@@ -1,7 +1,5 @@
 package com.mr.gof.behavioral.chain;
 
-import javax.swing.*;
-
 public class Dispenser {
 
   private final Dispenser nextDispenser;
