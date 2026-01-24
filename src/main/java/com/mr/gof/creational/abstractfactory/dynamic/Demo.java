@@ -1,9 +1,11 @@
 package com.mr.gof.creational.abstractfactory.dynamic;
 
+import com.mr.gof.Logger;
+
 /**
  * Demonstrates the hybrid MazeBuilder + AbstractFactory pattern.
  */
-public class HybridDemo {
+public class Demo {
 
     public static void main(String[] args) {
 
@@ -12,7 +14,7 @@ public class HybridDemo {
         // ---------------------------------------------------------
         // Standard Maze
         // ---------------------------------------------------------
-        System.out.println("=== Standard Maze (Builder + Factory) ===");
+        Logger.log("=== Standard Maze (Builder + Factory) ===");
 
         MazeFactory standardFactory =
                 StandardMazeFactoryCreator.createMazeFactory();
@@ -28,7 +30,7 @@ public class HybridDemo {
         // ---------------------------------------------------------
         // Enchanted Maze
         // ---------------------------------------------------------
-        System.out.println("\n=== Enchanted Maze (Builder + Factory) ===");
+        Logger.log("\n=== Enchanted Maze (Builder + Factory) ===");
 
         MazeFactory enchantedFactory =
                 EnchantedMazeFactoryCreator.createMazeFactory();
