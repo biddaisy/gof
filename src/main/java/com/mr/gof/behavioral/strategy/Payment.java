@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.strategy;
 
+import com.mr.gof.Logger;
+
 /**
  * Created by Ramanovich on 8/9/2017.
  */
@@ -14,6 +16,6 @@ public class Payment {
   }
 
   private void transfer(int amount, String bic, String iban, String name) {
-    System.out.println(amount + " transferred to " + name + " in " + bic + " on " + iban);
+    Logger.log(amount + " transferred to " + name + " in " + bic + " on " + iban);
   }
 }

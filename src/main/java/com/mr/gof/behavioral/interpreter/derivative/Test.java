@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.interpreter.derivative;
 
+import com.mr.gof.Logger;
+
 import java.math.BigDecimal;
 
 public class Test {
@@ -21,10 +23,10 @@ public class Test {
   }
 
   private static void print(Context context, Function function) {
-    System.out.println();
-    System.out.println("f(x) = " + function.getFunctionAsFormula(context));
-    System.out.println("f'(x) = " + function.getDerivativeAsFormula(context));
-    System.out.println("f(" + context.getValue() + ") = " + function.evaluate(context));
-    System.out.println("f'(" + context.getValue() + ") = " + function.evaluateDerivative(context));
+    Logger.log("");
+    Logger.log("f(x) = " + function.getFunctionAsFormula(context));
+    Logger.log("f'(x) = " + function.getDerivativeAsFormula(context));
+    Logger.log("f(" + context.getValue() + ") = " + function.evaluate(context));
+    Logger.log("f'(" + context.getValue() + ") = " + function.evaluateDerivative(context));
   }
 }

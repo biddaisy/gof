@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.interpreter.boolexp;
 
+import com.mr.gof.Logger;
+
 public class Test {
 
     public static void main(String... args){
@@ -21,27 +23,27 @@ public class Test {
 
         boolean result = expression.evaluate(context);
 
-        System.out.println("values: " + context.string());
-        System.out.println("on expression: " + expression.string());
-        System.out.println("result: " + result);
+        Logger.log("values: " + context.string());
+        Logger.log("on expression: " + expression.string());
+        Logger.log("result: " + result);
 
         // x and y
         expression = new AndExp(x, y);
         result = expression.evaluate(context);
-        System.out.println("on expression: " + expression.string());
-        System.out.println("result: " + result);
+        Logger.log("on expression: " + expression.string());
+        Logger.log("result: " + result);
 
         // x or y
         expression = new OrExp(x, y);
         result = expression.evaluate(context);
-        System.out.println("on expression: " + expression.string());
-        System.out.println("result: " + result);
+        Logger.log("on expression: " + expression.string());
+        Logger.log("result: " + result);
 
         // not x
         expression = new NotExp(x);
         result = expression.evaluate(context);
-        System.out.println("on expression: " + expression.string());
-        System.out.println("result: " + result);
+        Logger.log("on expression: " + expression.string());
+        Logger.log("result: " + result);
     }
 
 }

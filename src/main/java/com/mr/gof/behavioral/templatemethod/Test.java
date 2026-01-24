@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.templatemethod;
 
+import com.mr.gof.Logger;
+
 /**
  * Created by Ramanovich on 1/23/2017.
  */
@@ -21,7 +23,7 @@ public class Test {
 
     try {
       LoginResult loginResult = passwordLogin.login();
-      System.out.println(loginResult);
+      Logger.log(loginResult.name());
     }
     catch (LoginException e) {
       e.printStackTrace();
@@ -34,7 +36,7 @@ public class Test {
 
     try {
       LoginResult loginResult = tokenLogin.login();
-      System.out.println(loginResult);
+      Logger.log(loginResult.name());
     }
     catch (LoginException e) {
       e.printStackTrace();

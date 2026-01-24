@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.templatemethod;
 
+import com.mr.gof.Logger;
+
 /**
  * Created by Ramanovich on 1/14/2017.
  */
@@ -15,11 +17,11 @@ public abstract class Login {
   }
 
   private void logAuthentication(LoginResult loginResult) {
-    System.out.println("login result : " + loginResult);
+    Logger.log("login result : " + loginResult);
   }
 
   private void logCredential(Credential credential) {
-    System.out.println("login : " + credential.getLoginName());
+    Logger.log("login : " + credential.getLoginName());
   }
 
   protected abstract void postAuthentication(LoginResult loginResult);

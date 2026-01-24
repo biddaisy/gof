@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.command;
 
+import com.mr.gof.Logger;
+
 public class Test {
 
   public static void main(String[] args) {
@@ -9,7 +11,7 @@ public class Test {
     OpenCommand openCommand = new OpenCommand(application, document1);
     CopyCommand copyCommand = new CopyCommand(application, document2);
     PasteCommand pasteCommand = new PasteCommand(application);
-    SimpleCommand simpleCommand = new SimpleCommand(() -> System.out.println(application.getDocument().getText()));
+    SimpleCommand simpleCommand = new SimpleCommand(() -> Logger.log(application.getDocument().getText()));
 
     MenuItem openDocumentMenuItem = new MenuItem(openCommand);
     MenuItem copyDocumentMenuItem = new MenuItem(copyCommand);
@@ -23,7 +25,7 @@ public class Test {
 
     document2.setText("new test text 2");
 
-    System.out.println("Macro command:");
+    Logger.log("Macro command:");
     MacroCommand macroCommand = new MacroCommand();
     macroCommand.addCommand(openCommand, copyCommand, pasteCommand, simpleCommand);
     MenuItem copyAndPasteDocument = new MenuItem(macroCommand);

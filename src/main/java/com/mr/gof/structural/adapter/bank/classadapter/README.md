@@ -73,7 +73,7 @@ Uses only the modern interface and is completely unaware of the legacy system be
 ```java
 BankAccountService service = new LegacyBankClassAdapter();
 
-System.out.println("Balance: " + service.getBalance("ACC-1001"));
+Logger.log("Balance: " + service.getBalance("ACC-1001"));
 service.deposit("ACC-1001", new BigDecimal("250.00"));
 service.withdraw("ACC-1001", new BigDecimal("100.00"));
 ```

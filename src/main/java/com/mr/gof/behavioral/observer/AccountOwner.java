@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.observer;
 
+import com.mr.gof.Logger;
+
 public class AccountOwner implements Observer {
 
   private String name;
@@ -20,7 +22,7 @@ public class AccountOwner implements Observer {
   public void update(Subject subject) {
     if (subject instanceof Account) {
       Account account = (Account) subject;
-      System.out.println(name + "'s balance changed : " + account.getAmount());
+      Logger.log(name + "'s balance changed : " + account.getAmount());
     }
   }
 

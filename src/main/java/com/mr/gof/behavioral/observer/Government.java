@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.observer;
 
+import com.mr.gof.Logger;
+
 public class Government implements Observer {
 
   @Override
@@ -7,7 +9,7 @@ public class Government implements Observer {
     if (subject instanceof Account) {
       Account account = (Account) subject;
       AccountOwner accountOwner = account.getAccountOwner();
-      System.out.println("Government: " + accountOwner.getName() + " got balance " + account.getAmount());
+      Logger.log("Government: " + accountOwner.getName() + " got balance " + account.getAmount());
     }
   }
 

@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.memento;
 
+import com.mr.gof.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class Editor {
   }
 
   public void displayContent() {
-    System.out.println(document.getContent());
+    Logger.log(document.getContent());
   }
 
 }

@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.state;
 
+import com.mr.gof.Logger;
+
 public class AuditState implements PaymentState {
   private int amount;
 
@@ -9,7 +11,7 @@ public class AuditState implements PaymentState {
 
   @Override
   public PaymentState doAction() {
-    System.out.println("audit done");
+    Logger.log("audit done");
     return new AuthorizationState(amount);
   }
 }

@@ -1,5 +1,7 @@
 package com.mr.gof.behavioral.iterator.impl;
 
+import com.mr.gof.Logger;
+
 import java.util.Objects;
 
 public class Book implements Comparable<Book> {
@@ -22,7 +24,7 @@ public class Book implements Comparable<Book> {
   }
 
   public void print() {
-    System.out.println("book '" + title + "' author " + author);
+    Logger.log("book '" + title + "' author " + author);
   }
 
   @Override

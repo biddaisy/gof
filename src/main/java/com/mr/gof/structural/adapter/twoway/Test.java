@@ -1,5 +1,7 @@
 package com.mr.gof.structural.adapter.twoway;
 
+import com.mr.gof.Logger;
+
 public class Test {
 
     public static void main(String... args){
@@ -30,7 +32,7 @@ public class Test {
         intSet.remove(3);
         System.out.print("intSet: ");
         intSet.iterator().forEachRemaining(Test::printI);
-        System.out.println();
+        Logger.log("");
         System.out.printf("intSet %s has 3: %s%n", intSet, intSet.member(3));
         System.out.printf("intSet %s has 4: %s%n", intSet, intSet.member(4));
 
@@ -39,17 +41,17 @@ public class Test {
     private static void testIntRange(IntRange intRange){
         System.out.print("intRange: ");
         intRange.asList().forEach(Test::printI);
-        System.out.println();
+        Logger.log("");
         IntRange intRange2 = new IntRangeImpl(1,2);
         intRange.differenceFrom(intRange2);
         System.out.print("intRange removed 1,2: ");
         intRange.asList().forEach(Test::printI);
-        System.out.println();
+        Logger.log("");
         IntRange intRange3 = new IntRangeImpl(-1,-2);
         intRange.unionWith(intRange3);
         System.out.print("intRange added -1,-2: ");
         intRange.asList().forEach(Test::printI);
-        System.out.println();
+        Logger.log("");
         System.out.printf("%s contains %s: %s%n", intRange, intRange3, intRange.isSupersetOf(intRange3));
         System.out.printf("%s contains %s: %s%n", intRange, intRange2, intRange.isSupersetOf(intRange2));
         intRange.unionWith(intRange2);

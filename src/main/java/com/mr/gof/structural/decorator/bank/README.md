@@ -101,7 +101,7 @@ public class DecoratorBankDemo {
         account.deposit(500);
         account.withdraw(6000);
 
-        System.out.println(account.getBalance());
+        Logger.log(account.getBalance());
     }
 }
 ```

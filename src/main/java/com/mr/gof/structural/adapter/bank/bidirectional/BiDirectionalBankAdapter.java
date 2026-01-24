@@ -1,5 +1,7 @@
 package com.mr.gof.structural.adapter.bank.bidirectional;
 
+import com.mr.gof.Logger;
+
 import java.math.BigDecimal;
 
 /**
@@ -46,12 +48,12 @@ public class BiDirectionalBankAdapter
     @Override
     public void makeDeposit(String acct, BigDecimal amt) {
         balance = balance.add(amt);
-        System.out.println("[ADAPTER] Deposit: +" + amt + " → New balance: " + balance);
+        Logger.log("[ADAPTER] Deposit: +" + amt + " → New balance: " + balance);
     }
 
     @Override
     public void makeWithdrawal(String acct, BigDecimal amt) {
         balance = balance.subtract(amt);
-        System.out.println("[ADAPTER] Withdrawal: -" + amt + " → New balance: " + balance);
+        Logger.log("[ADAPTER] Withdrawal: -" + amt + " → New balance: " + balance);
     }
 }
