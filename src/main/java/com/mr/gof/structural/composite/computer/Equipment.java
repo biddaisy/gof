@@ -36,7 +36,7 @@ abstract class Equipment {
      *
      * @param name the equipment name
      */
-    public Equipment(String name) {
+    protected Equipment(String name) {
         this.name = name;
     }
 
