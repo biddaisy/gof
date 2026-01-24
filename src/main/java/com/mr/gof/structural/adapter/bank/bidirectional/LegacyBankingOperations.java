@@ -1,0 +1,12 @@
+package com.mr.gof.structural.adapter.bank.bidirectional;
+
+import java.math.BigDecimal;
+
+/**
+ * Legacy banking interface used by old systems.
+ */
+public interface LegacyBankingOperations {
+    BigDecimal fetchBalance(String acct);
+    void makeDeposit(String acct, BigDecimal amt);
+    void makeWithdrawal(String acct, BigDecimal amt);
+}
