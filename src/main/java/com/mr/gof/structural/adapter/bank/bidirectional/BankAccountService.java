@@ -3,7 +3,7 @@ package com.mr.gof.structural.adapter.bank.bidirectional;
 import java.math.BigDecimal;
 
 /**
- * Modern banking interface used by new services.
+ * Modern parameterized interface used by new services.
  */
 public interface BankAccountService {
     BigDecimal getBalance(String accountId);

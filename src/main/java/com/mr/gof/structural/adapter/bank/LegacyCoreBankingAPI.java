@@ -5,7 +5,7 @@ import com.mr.gof.Logger;
 import java.math.BigDecimal;
 
 /**
- * Adaptee: Legacy core banking API.
+ * Adaptee: Legacy core parameterized API.
  *
  * This represents an old system that cannot be modified.
  * Its method names and semantics do not match the modern interface.

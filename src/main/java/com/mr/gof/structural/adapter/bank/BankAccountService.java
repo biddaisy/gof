@@ -3,7 +3,7 @@ package com.mr.gof.structural.adapter.bank;
 import java.math.BigDecimal;
 
 /**
- * Target interface expected by the modern banking system.
+ * Target interface expected by the modern parameterized system.
  * <p>
  * This interface defines clean, domain‑friendly operations for
  * interacting with bank accounts. New services, microservices,

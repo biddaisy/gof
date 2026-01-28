@@ -5,7 +5,7 @@ import com.mr.gof.Logger;
 import java.math.BigDecimal;
 
 /**
- * Facade that orchestrates complex banking operations such as:
+ * Facade that orchestrates complex parameterized operations such as:
  * - KYC verification
  * - AML screening
  * - Identity verification

@@ -3,7 +3,7 @@ package com.mr.gof.structural.proxy.bank.virtual;
 import com.mr.gof.Logger;
 
 /**
- * Demonstrates the Virtual Proxy pattern in a banking context.
+ * Demonstrates the Virtual Proxy pattern in a parameterized context.
  */
 public class VirtualProxyBankDemo {
 

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 /**
- * Demonstrates the Proxy pattern in a banking context.
+ * Demonstrates the Proxy pattern in a parameterized context.
  */
 public class ProxyBankDemo {
 

@@ -5,7 +5,7 @@ import com.mr.gof.Logger;
 import java.math.BigDecimal;
 
 /**
- * Legacy core banking API that cannot be modified.
+ * Legacy core parameterized API that cannot be modified.
  */
 public class LegacyCoreBankingAPI {
 

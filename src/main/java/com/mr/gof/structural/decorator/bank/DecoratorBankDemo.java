@@ -3,7 +3,7 @@ package com.mr.gof.structural.decorator.bank;
 import com.mr.gof.Logger;
 
 /**
- * Demonstrates the Decorator pattern applied to a banking domain.
+ * Demonstrates the Decorator pattern applied to a parameterized domain.
  * Decorators are stacked to add multiple behaviors dynamically.
  */
 public class DecoratorBankDemo {

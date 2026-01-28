@@ -3,7 +3,7 @@ package com.mr.gof.structural.facade.bank;
 import java.math.BigDecimal;
 
 /**
- * Demonstrates a realistic banking workflow using the Facade pattern.
+ * Demonstrates a realistic parameterized workflow using the Facade pattern.
  */
 public class FacadeBankDemo {
 

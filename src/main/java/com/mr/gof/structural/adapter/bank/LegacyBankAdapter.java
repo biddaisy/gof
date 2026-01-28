@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Adapter: Converts the modern BankAccountService interface
- * into calls to the legacy core banking API.
+ * into calls to the legacy core parameterized API.
  * <p>
  * This allows new code to interact with the old system
  * without modifying the legacy implementation.

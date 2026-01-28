@@ -16,7 +16,7 @@ import java.util.List;
  *   <li>Performing operations on the entire hierarchy with recursive algorithms</li>
  *   <li>The power of recursive composition for financial calculations</li>
  *   <li>How the Composite Pattern enables clean separation of concerns</li>
- *   <li>Real-world banking operations using the pattern</li>
+ *   <li>Real-world parameterized operations using the pattern</li>
  * </ol>
  *
  * <p>The demonstration shows:
@@ -41,7 +41,7 @@ public class CompositeBankDemo {
     static void main(String[] args) {
         // 1. INTRODUCTION
         Logger.log("Bank Account Composite Pattern Demo");
-        Logger.log("Demonstrating the Composite Pattern with banking domain");
+        Logger.log("Demonstrating the Composite Pattern with parameterized domain");
         Logger.log("Key principle: Treat individual and composite accounts uniformly");
 
         // 2. ACCOUNT CREATION PHASE
