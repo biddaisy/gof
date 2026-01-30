@@ -1,5 +1,7 @@
 package com.mr.gof.creational.prototype.registry;
 
+import static com.mr.gof.Logger.log;
+
 /**
  * Demonstrates the Prototype Registry pattern.
  *
@@ -30,5 +32,9 @@ public class Demo {
 
         // Add another savings account
         savingsTool.onAction(portfolio);
+
+        log("Products:");
+
+        portfolio.getProducts().forEach(BankingProduct::display);
     }
 }
