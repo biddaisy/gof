@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.interpreter.boolexp;
+package com.github.biddaisy.gof.behavioral.interpreter.boolexp;
 
 import java.util.HashMap;
 import java.util.Map;

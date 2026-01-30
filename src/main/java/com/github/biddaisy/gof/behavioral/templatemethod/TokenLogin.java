@@ -1,6 +1,6 @@
-package com.mr.gof.behavioral.templatemethod;
+package com.github.biddaisy.gof.behavioral.templatemethod;
 
-import static com.mr.gof.behavioral.templatemethod.LoginResult.*;
+import static com.github.biddaisy.gof.behavioral.templatemethod.LoginResult.*;
 
 /**
  * Created by Ramanovich on 5/13/2017.

@@ -1,8 +1,8 @@
-package com.mr.gof.behavioral.mediator;
+package com.github.biddaisy.gof.behavioral.mediator;
 
 import com.github.biddaisy.gof.Logger;
 
-import static com.mr.gof.behavioral.mediator.Currency.ZAR;
+import static com.github.biddaisy.gof.behavioral.mediator.Currency.ZAR;
 
 import java.util.List;
 

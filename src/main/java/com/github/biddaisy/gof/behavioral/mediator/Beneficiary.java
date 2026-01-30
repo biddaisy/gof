@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.mediator;
+package com.github.biddaisy.gof.behavioral.mediator;
 
 public class Beneficiary {
   private final String name;

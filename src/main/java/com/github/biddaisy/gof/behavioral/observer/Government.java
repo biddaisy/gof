@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.observer;
+package com.github.biddaisy.gof.behavioral.observer;
 
 import com.github.biddaisy.gof.Logger;
 

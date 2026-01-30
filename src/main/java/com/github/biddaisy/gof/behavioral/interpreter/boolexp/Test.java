@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.interpreter.boolexp;
+package com.github.biddaisy.gof.behavioral.interpreter.boolexp;
 
 import com.github.biddaisy.gof.Logger;
 

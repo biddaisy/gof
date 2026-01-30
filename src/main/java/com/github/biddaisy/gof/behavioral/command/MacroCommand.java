@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.command;
+package com.github.biddaisy.gof.behavioral.command;
 
 import java.util.ArrayList;
 import java.util.Arrays;

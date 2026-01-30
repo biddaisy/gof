@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.visitor;
+package com.github.biddaisy.gof.behavioral.visitor;
 
 /**
  * Created by Ramanovich on 12/30/2016.

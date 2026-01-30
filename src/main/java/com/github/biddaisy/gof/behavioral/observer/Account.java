@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.observer;
+package com.github.biddaisy.gof.behavioral.observer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.mr.gof.behavioral.iterator.impl;
+package com.github.biddaisy.gof.behavioral.iterator.impl;
 
-import com.mr.gof.behavioral.iterator.Iterator;
+import com.github.biddaisy.gof.behavioral.iterator.Iterator;
 
 class CatalogIterator<T> implements Iterator<T> {
 

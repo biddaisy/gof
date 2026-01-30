@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.observer;
+package com.github.biddaisy.gof.behavioral.observer;
 
 public class Test {
 

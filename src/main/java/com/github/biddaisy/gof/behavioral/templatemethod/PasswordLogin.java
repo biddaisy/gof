@@ -1,6 +1,6 @@
-package com.mr.gof.behavioral.templatemethod;
+package com.github.biddaisy.gof.behavioral.templatemethod;
 
-import static com.mr.gof.behavioral.templatemethod.LoginResult.*;
+import static com.github.biddaisy.gof.behavioral.templatemethod.LoginResult.*;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;

@@ -1,10 +1,10 @@
-package com.mr.gof.behavioral.mediator.model;
+package com.github.biddaisy.gof.behavioral.mediator.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mr.gof.behavioral.mediator.Account;
-import com.mr.gof.behavioral.mediator.Accounts;
+import com.github.biddaisy.gof.behavioral.mediator.Account;
+import com.github.biddaisy.gof.behavioral.mediator.Accounts;
 
 public class OrderingAccountModel extends BaseModel {
 

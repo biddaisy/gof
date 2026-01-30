@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.templatemethod;
+package com.github.biddaisy.gof.behavioral.templatemethod;
 
 /**
  * Created by Ramanovich on 1/23/2017.

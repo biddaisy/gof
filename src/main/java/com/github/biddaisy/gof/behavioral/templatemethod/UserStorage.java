@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.templatemethod;
+package com.github.biddaisy.gof.behavioral.templatemethod;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;

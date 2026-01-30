@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.interpreter.derivative;
+package com.github.biddaisy.gof.behavioral.interpreter.derivative;
 
 import com.github.biddaisy.gof.Logger;
 

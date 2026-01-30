@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.command;
+package com.github.biddaisy.gof.behavioral.command;
 
 public class PasteCommand implements Command {
 

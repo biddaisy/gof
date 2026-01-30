@@ -1,9 +1,9 @@
-package com.mr.gof.behavioral.iterator.impl;
+package com.github.biddaisy.gof.behavioral.iterator.impl;
 
 import java.util.TreeSet;
 
-import com.mr.gof.behavioral.iterator.Iterator;
-import com.mr.gof.behavioral.iterator.Storage;
+import com.github.biddaisy.gof.behavioral.iterator.Iterator;
+import com.github.biddaisy.gof.behavioral.iterator.Storage;
 
 public class Catalog<T> implements Storage<T> {
 

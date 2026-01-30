@@ -1,7 +1,7 @@
-package com.mr.gof.behavioral.mediator;
+package com.github.biddaisy.gof.behavioral.mediator;
 
-import static com.mr.gof.behavioral.mediator.Bank.*;
-import static com.mr.gof.behavioral.mediator.Currency.*;
+import static com.github.biddaisy.gof.behavioral.mediator.Bank.*;
+import static com.github.biddaisy.gof.behavioral.mediator.Currency.*;
 
 import java.util.ArrayList;
 import java.util.Collections;

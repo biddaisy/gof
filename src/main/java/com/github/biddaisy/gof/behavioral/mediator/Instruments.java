@@ -1,9 +1,9 @@
-package com.mr.gof.behavioral.mediator;
+package com.github.biddaisy.gof.behavioral.mediator;
 
-import static com.mr.gof.behavioral.mediator.Bank.*;
-import static com.mr.gof.behavioral.mediator.Country.*;
-import static com.mr.gof.behavioral.mediator.Currency.*;
-import static com.mr.gof.behavioral.mediator.ServiceLevel.*;
+import static com.github.biddaisy.gof.behavioral.mediator.Bank.*;
+import static com.github.biddaisy.gof.behavioral.mediator.Country.*;
+import static com.github.biddaisy.gof.behavioral.mediator.Currency.*;
+import static com.github.biddaisy.gof.behavioral.mediator.ServiceLevel.*;
 
 import java.util.*;
 import java.util.stream.Collectors;

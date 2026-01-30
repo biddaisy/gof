@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.iterator.impl;
+package com.github.biddaisy.gof.behavioral.iterator.impl;
 
 import com.github.biddaisy.gof.Logger;
 

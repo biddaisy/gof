@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.memento;
+package com.github.biddaisy.gof.behavioral.memento;
 
 public class Test {
 

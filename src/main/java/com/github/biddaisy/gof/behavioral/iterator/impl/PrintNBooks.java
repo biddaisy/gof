@@ -1,7 +1,7 @@
-package com.mr.gof.behavioral.iterator.impl;
+package com.github.biddaisy.gof.behavioral.iterator.impl;
 
-import com.mr.gof.behavioral.iterator.Storage;
-import com.mr.gof.behavioral.iterator.Traverser;
+import com.github.biddaisy.gof.behavioral.iterator.Storage;
+import com.github.biddaisy.gof.behavioral.iterator.Traverser;
 
 public class PrintNBooks extends Traverser<Book> {
 

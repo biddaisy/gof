@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.iterator;
+package com.github.biddaisy.gof.behavioral.iterator;
 
 public abstract class FilteringTraverser<T> {
 

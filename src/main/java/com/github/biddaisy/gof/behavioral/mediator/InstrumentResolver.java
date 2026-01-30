@@ -1,10 +1,10 @@
-package com.mr.gof.behavioral.mediator;
+package com.github.biddaisy.gof.behavioral.mediator;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.mr.gof.behavioral.mediator.model.*;
+import com.github.biddaisy.gof.behavioral.mediator.model.*;
 
 public class InstrumentResolver {
 

@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.strategy;
+package com.github.biddaisy.gof.behavioral.strategy;
 
 /**
  * Created by Ramanovich on 8/10/2017.

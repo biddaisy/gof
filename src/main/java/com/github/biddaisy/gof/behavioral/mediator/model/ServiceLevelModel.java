@@ -1,9 +1,9 @@
-package com.mr.gof.behavioral.mediator.model;
+package com.github.biddaisy.gof.behavioral.mediator.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mr.gof.behavioral.mediator.ServiceLevel;
+import com.github.biddaisy.gof.behavioral.mediator.ServiceLevel;
 
 public class ServiceLevelModel extends BaseModel {
   private ServiceLevel selectedServiceLevel;

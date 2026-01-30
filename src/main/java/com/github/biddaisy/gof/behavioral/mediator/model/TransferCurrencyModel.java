@@ -1,11 +1,11 @@
-package com.mr.gof.behavioral.mediator.model;
+package com.github.biddaisy.gof.behavioral.mediator.model;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.mr.gof.behavioral.mediator.Currency;
+import com.github.biddaisy.gof.behavioral.mediator.Currency;
 
 public class TransferCurrencyModel extends BaseModel{
   private Currency selectedCurrency;

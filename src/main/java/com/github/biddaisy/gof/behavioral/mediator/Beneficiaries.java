@@ -1,6 +1,6 @@
-package com.mr.gof.behavioral.mediator;
+package com.github.biddaisy.gof.behavioral.mediator;
 
-import static com.mr.gof.behavioral.mediator.Country.*;
+import static com.github.biddaisy.gof.behavioral.mediator.Country.*;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.chain;
+package com.github.biddaisy.gof.behavioral.chain;
 
 import java.util.Arrays;
 import java.util.Collections;

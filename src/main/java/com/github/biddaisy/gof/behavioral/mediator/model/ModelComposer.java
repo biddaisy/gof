@@ -1,6 +1,6 @@
-package com.mr.gof.behavioral.mediator.model;
+package com.github.biddaisy.gof.behavioral.mediator.model;
 
-import com.mr.gof.behavioral.mediator.InstrumentResolver;
+import com.github.biddaisy.gof.behavioral.mediator.InstrumentResolver;
 
 public class ModelComposer {
 

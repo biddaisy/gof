@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.strategy;
+package com.github.biddaisy.gof.behavioral.strategy;
 
 import com.github.biddaisy.gof.Logger;
 

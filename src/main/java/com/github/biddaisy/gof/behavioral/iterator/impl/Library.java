@@ -1,10 +1,10 @@
-package com.mr.gof.behavioral.iterator.impl;
+package com.github.biddaisy.gof.behavioral.iterator.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mr.gof.behavioral.iterator.Iterator;
-import com.mr.gof.behavioral.iterator.Storage;
+import com.github.biddaisy.gof.behavioral.iterator.Iterator;
+import com.github.biddaisy.gof.behavioral.iterator.Storage;
 
 public class Library<T> implements Storage<T> {
 

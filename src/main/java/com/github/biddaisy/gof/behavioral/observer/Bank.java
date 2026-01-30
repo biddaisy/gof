@@ -1,4 +1,4 @@
-package com.mr.gof.behavioral.observer;
+package com.github.biddaisy.gof.behavioral.observer;
 
 import java.util.HashMap;
 import java.util.Map;
