@@ -1,0 +1,29 @@
+package com.mr.gof.behavioral.observer;
+
+import com.github.biddaisy.gof.Logger;
+
+public class AccountOwner implements Observer {
+
+  private String name;
+
+  public AccountOwner(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public void update(Subject subject) {
+    if (subject instanceof Account) {
+      Account account = (Account) subject;
+      Logger.log(name + "'s balance changed : " + account.getAmount());
+    }
+  }
+
+}
